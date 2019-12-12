@@ -1,0 +1,10 @@
+[Unit]
+Description=Parser agent for I3 platform
+After=i3_marketplace.service
+
+[Service]
+User=iotm
+ExecStart=/bin/bash -c '/usr/bin/python /home/iotm/iotm/backend/parser_agent.py 2>&1 | tee /home/iotm/iotm/backend/log/parser.log'
+
+[Install]
+WantedBy=multi-user.target

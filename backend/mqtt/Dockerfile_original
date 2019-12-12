@@ -1,0 +1,69 @@
+# FROM debian:jessie
+FROM ubuntu:16.04
+
+ENV MOSQUITTO_VERSION=1.4.14
+
+# how to build the mosquitto image for V1
+# install mosquitto using git-clone
+# install python 2.7
+# pip install pyjwt
+# copy jwt python script to image
+# modify pyjwt path in auth plugin
+# compile mosquitto-auth-plugin locally
+# copy the .so file to /mqtt
+
+# a better way is to copy the auth-plugin source code
+# from local directory into docker
+# and compile it inside
+# just copying a bin file is not flexible
+# if this is the case
+# should install python, pyjwt, <Python.h>
+# specify the container path in auth-plugin Makefile (location of python.h)
+# specify the path to call
+
+RUN mkdir zxc
+
+ADD ./backend/python_c_integrate /zxc/
+ADD ./backend/mosquitto-auth-plug-0.1.2 /zxc/
+
+RUN \
+        set -x; \
+        apt-get update && apt-get install -y --no-install-recommends \
+                libc-ares-dev git libmysqlclient-dev libssl-dev libwebsockets-dev uuid-dev build-essential wget  ca-certificates \
+                curl libcurl4-openssl-dev  libc-ares2 libcurl3 \
+	&& cd /tmp \ # the python_c_integrate folder will be put under /tmp
+        && wget http://mosquitto.org/files/source/mosquitto-$MOSQUITTO_VERSION.tar.gz -O mosquitto.tar.gz \
+        && mkdir mosquitto-src && tar xfz mosquitto.tar.gz --strip-components=1 -C mosquitto-src \
+        && cd mosquitto-src \
+        && make WITH_SRV=yes WITH_MEMORY_TRACKING=no \
+        && make install && ldconfig \
+        && git clone -b 0.1.2 https://github.com/jpmens/mosquitto-auth-plug.git \
+        && cd mosquitto-auth-plug \
+        && cp config.mk.in config.mk \
+        && sed -i "s/BACKEND_HTTP ?= no/BACKEND_HTTP ?= yes/" config.mk \
+        && sed -i "s/BACKEND_MYSQL ?= yes/BACKEND_MYSQL ?= yes/" config.mk \
+        && sed -i "s/CFG_LDFLAGS =/CFG_LDFLAGS = -lcares/" config.mk \
+        && sed -i "s/MOSQUITTO_SRC =/MOSQUITTO_SRC = \/tmp\/mosquitto-src\//" config.mk \
+        && make \
+        && cp np /var \
+        && mkdir /mqtt && cp auth-plug.so /mqtt/ \
+        && cp auth-plug.so /usr/local/lib/ \
+        && cd examples \
+        && useradd -r mosquitto \
+        && apt-get purge -y build-essential git wget ca-certificates \
+        && apt-get autoremove -y \
+        && apt-get -y autoclean \
+        && rm -rf /var/cache/apt/* \
+        && rm -rf  /tmp/*
+
+VOLUME ["/var/lib/mosquitto"]
+
+EXPOSE 1883 8883
+ADD mysql.sql /var
+USER root
+ADD mosquitto.conf /etc/mosquitto/mosquitto.conf
+ADD run.sh /run.sh
+RUN chmod +x /run.sh
+
+ENTRYPOINT ["/run.sh"]
+CMD ["mosquitto"]

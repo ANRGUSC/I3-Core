@@ -1,0 +1,61 @@
+# in V1, we'll copy local mosquitto-auth-plugin files into images
+# set the project main path as the working directory
+version: '2'
+volumes:
+  app-volume: 
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_USER=anrg_iotm
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_PASSWORD=AnRg@UsC
+      - MYSQL_DATABASE=iotm2
+    ports:
+      - "3306:3306"
+    volumes:
+      - app-volume:/var/log/mosquitto
+      - ./mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
+  django:
+    build: 
+      context: ./
+      dockerfile: ./frontend/Dockerfile
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+      - app-volume:/var/log/mosquitto
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysql
+    links: 
+      - mysql:mysql
+  mosquitto:
+    build:
+        context: ./
+        dockerfile: ./backend/mqtt/Dockerfile
+    volumes:
+      - app-volume:/var/log/mosquitto
+    ports:
+      - "1883:1883"
+    links: 
+      - mysql:mysql
+    tty: true
+  http_to_mqtt:
+    build: ./backend/http_to_mqtt
+    volumes:
+      - app-volume:/var/log/mosquitto
+    ports:
+      - "5000:5000"
+    links: 
+      - mysql:mysql
+  parser_agent:
+    build: 
+      context: ./
+      dockerfile: ./backend/parser_agent/Dockerfile
+    links: 
+      - mysql:mysql
+    volumes:
+      - app-volume:/var/log/mosquitto

@@ -1,0 +1,26 @@
+{% extends "marketplace_base.html" %}
+
+{% block title %}
+  I3 Marketplace | Hubs_Create
+{% endblock %}
+
+{% block page_content %}
+
+  <div class="container">
+    <form method="POST" action="" enctype='multipart/form-data'>
+    <h1>Create new Hub</h1>
+    {% csrf_token %}
+    <h4>Enter name:</h4>
+    <h5>No duplicate names for your own hubs</h5>
+    {{form.name}}
+    <br>
+    <h4>Private or Public?</h4>
+    <h5>all devices and products in public hubs are viewable to everyone</h5>
+    {{form.private}}
+    <br></br>
+    <button type="submit" value="OK" class="btn btn-primary">Create</button>
+    </form>
+  </div>
+  <!-- /.container -->
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'marketplace_base.html' %}
+
+{% block title %}I3 Marketplace | Registration{% endblock %}
+
+{% block extra_css %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/datatables.min.css"/>
+{% endblock %}
+
+{% block page_content %}
+{#{% block title %}User Registration{% endblock %}#}
+{#{% block head %}User Registration{% endblock %}#}
+<div class="container">
+    <h2>Registration</h2>
+<form method="post" action=".">
+{{ form.as_p }}
+<input type="submit" value="sign up" />
+{% csrf_token %}
+</form>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+  {{ block.super }}
+  <script type="text/javascript"
+          src="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/datatables.min.js"></script>
+
+  <script  type="text/javascript">
+    $(document).ready(function () {
+       $('table.table').each(function() {
+           $(this).DataTable();
+       })
+    });
+  </script>
+
+{% endblock %}
+

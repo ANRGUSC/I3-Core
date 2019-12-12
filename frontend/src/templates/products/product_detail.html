@@ -1,0 +1,496 @@
+{% extends "marketplace_base.html" %}
+{% load staticfiles %}
+  
+{% load get_thumbnail %}
+
+{% block title %}I3 Marketplace | Product | {{ object.title }}{% endblock %}
+
+{% block page_content %}
+
+  <!--<span><button id="rating_get">Get Rating</button></span>
+  <span><button id="rating_post">Rate</button></span>-->
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <h2>Product Details</h2>
+      <div class="col-sm-4">
+        <div class="image-detail">
+          <img class="img-responsive" src="{{ object|get_thumbnail:"hd" }}" alt="">
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="title-detail">
+          {{ object.title }} <em><small>by {{ object.seller.get_username }}</small></em>
+        </div>
+        <span><button id="rating_get">See Rating</button></span>
+        <span>&nbsp&nbsp&nbsp</span>
+        <span id="rating">Rating</span>
+        <span>&nbsp&nbsp&nbsp</span>
+        <span><button id="rating_post">Rate Product</button></span>
+        <span class="fa fa-star checked" id="one_star"></span>
+        <span class="fa fa-star" id="two_star"></span>
+        <span class="fa fa-star" id="three_star"></span>
+        <span class="fa fa-star" id="four_star"></span>
+        <span class="fa fa-star" id="five_star"></span>
+        <span>&nbsp&nbsp&nbsp</span>
+        <input type="hidden" type="number" id="rating_score" value=1></input>
+        <form method="post" action="{% url 'cart:list' %}" enctype="multipart/form-data">
+          {% csrf_token %}
+          <input type="hidden" name="item" value="{{ object.id }}">
+          <table class="table table-detail">
+            <tbody>
+            <tr>
+              <td>Price</td>
+              <td>
+                <div class="price">
+                  {% if object.sale_active %}
+                    <div>${{ object.sale_price }}</div>
+                    <span class="price-old"><del>${{ object.price }}</del></span>
+                  {% else %}
+                    <div>${{ object.get_price }}</div>
+                  {% endif %}
+                </div>
+              </td>
+
+            </tr>
+
+            <tr>
+                <td>Sensor Type</td>
+                <td>
+                <div class="sensor type">
+                    {% if object.sensor_type == 1 %}
+                        <div> Sensor </div>
+                    {% elif object.sensor_type == 2 %}
+                        <div> Actuactor </div>
+                    {% else %}
+                        <div> Both</div>
+                    {% endif %}
+
+                </div>
+                </td>
+
+            </tr>
+            {% if object.seller != request.user %}
+              <tr>
+                <td>Quantity</td>
+                <td>
+                  <div class="input-qty">
+                    <div class="input-group">
+                      <input title="Quantity" name="qty" type="number" value="1" class="form-control" min="1" style="display: block;">
+                    </div>
+                  </div>
+                  {% if object.restricted_active %}
+                    <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#reqAccessModal">
+                      <i class="glyphicon glyphicon-warning-sign"></i> Request Access
+                    </button>
+
+                    <div class="modal fade" tabindex="-1" role="dialog" id="reqAccessModal">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Request Access Message</h4>
+                          </div>
+                          <div class="modal-body">
+                            <div class="form-group">
+                              <label for="reqAccessMessage">Please briefly describe how you are going to use this data</label>
+                              <textarea class="form-control" title="reqAccessMessage" name="request_message" required></textarea>
+                            </div>
+                            <div class="form-group">
+                              <label for="reqAccessFile">or upload a file</label>
+                              <input type="file" accept=".txt,.pdf" name="request_attachment" class="form-control" title="reqAccessFile">
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="document.getElementsByName('request_message')[0].value = ''">Cancel</button>
+                            <button type="submit" class="btn btn-primary">
+                              <i class="glyphicon glyphicon-shopping-cart"></i> Add to Cart
+                            </button>
+                          </div>
+                        </div><!-- /.modal-content -->
+                      </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+
+                  {% else %}
+                    <button type="submit" class="btn btn-primary">
+                      <i class="glyphicon glyphicon-shopping-cart"></i> Add to Cart
+                    </button>
+                  {% endif %}
+                </td>
+              </tr>
+            {% endif %}
+            <tr>
+                
+            </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+      <div class="col-md-8">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">Description</div>
+          <div class="panel-body">
+            <p>{{ object.description }}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    {#    <div class="row">#}
+    {##}
+    {#      <div class="col-md-9 product">#}
+    {##}
+    {#        <div class="panel panel-default">#}
+    {#          <div class="panel-heading">Product Details</div>#}
+    {#          <div class="panel-body">#}
+    {#            <div class="container">#}
+    {#              <div class="row">#}
+    {#                <div class="col-md-3">#}
+    {#                  <img class="img-responsive" src="{{ object|get_thumbnail:"hd" }}" alt="">#}
+    {#                </div>#}
+    {#                <div class="col-md-9">#}
+    {##}
+    {#                </div>#}
+    {#              </div>#}
+    {#            </div>#}
+    {#            <div class="thumbnail thumbnail-large">#}
+    {#              <img class="img-responsive" src="{{ object|get_thumbnail:"hd" }}" alt="">#}
+    {#              <div class="caption-full">#}
+    {#                <h4 class="pull-right">${{ object.get_price }}</h4>#}
+    {#                <h4 class="product-title">#}
+    {#                  <a href="#">{{ object.title }}</a>#}
+    {#                </h4>#}
+    {#                <p class="product-seller">by {{ object.seller.username }}</p>#}
+    {#                <p>Purchases: {{ object.transaction_set.count }}</p>#}
+    {#                <p>#}
+    {#                  {{ object.description }}#}
+    {#                </p>#}
+    {#              </div>#}
+    {#              <div class="ratings">#}
+    {#                <p>#}
+    {#                  <span class="glyphicon glyphicon-star"></span>#}
+    {#                  <span class="glyphicon glyphicon-star"></span>#}
+    {#                  <span class="glyphicon glyphicon-star"></span>#}
+    {#                  <span class="glyphicon glyphicon-star"></span>#}
+    {#                  <span class="glyphicon glyphicon-star-empty"></span>#}
+    {#                  4.0 stars#}
+    {#                </p>#}
+    {#              </div>#}
+    {#            </div>#}
+    {#          </div>#}
+    {#        </div>#}
+    {##}
+    {#      </div>#}
+    {##}
+    {#      <div class="col-md-3">#}
+    {#        {% if request.user.is_authenticated and object in request.user.myproducts.products.all %}#}
+    {#          {% if object.media %}#}
+    {#            <p><a href='{{ object.get_download }}'>Download</a></p>#}
+    {#            <p><a href='{{ object.get_download }}?preview=True'>Preview</a></p>#}
+    {#          {% else %}#}
+    {#            <p>Product is coming soon for download</p>#}
+    {#          {% endif %}#}
+    {##}
+    {#        {% else %}#}
+    {##}
+    {##}
+    {#          <form method='GET' action="{% url 'cart' %}">#}
+    {#            <br/>#}
+    {#            <p>Number of items:</p>#}
+    {#            <input type='hidden' name='item' value='{{ object.id }}'/>#}
+    {#            <input class='form-control' type='number' name='qty' value='1'/>#}
+    {##}
+    {#            <br/>#}
+    {##}
+    {#            {% if object.restricted_active %}#}
+    {#              <p style="color:red;">This item is Restricted. Please, explain your purchase below.</p>#}
+    {#              <textarea name='purchase-intention' rows="5" cols="25"></textarea>#}
+    {#            {% else %}#}
+    {#              <textarea name='purchase-intention' style="display:none;"></textarea>#}
+    {#            {% endif %}#}
+    {##}
+    {#            <input type='submit' value='Add to Cart' class='btn btn-default'/>#}
+    {#            <p><a id='purchase-btn' href="#">Purchase</a></p>#}
+    {#            <div id='dialog-confirm' title='Confirm Purchase' style='display:none'>#}
+    {#              <p>Your card on file will be charged after you agree below.</p>#}
+    {#            </div>#}
+    {#          </form>#}
+    {#        {% endif %}#}
+    {#      </div>#}
+    {##}
+    {#    </div>#}
+
+  </div>
+  <!-- /.container -->
+
+
+  {#<div class='col-sidebar pull-right'>#}
+  {##}
+  {#	{% if request.user.is_authenticated and object in request.user.myproducts.products.all %}#}
+  {#	{% if object.media %}#}
+  {#		<p><a href='{{ object.get_download }}'>Download</a></p>#}
+  {#		<p><a href='{{ object.get_download }}?preview=True'>Preview</a></p>#}
+  {#		{% else %}#}
+  {#		<p>Product is coming soon for download</p>#}
+  {#	{% endif %}#}
+  {##}
+  {#	{% else %}#}
+  {##}
+  {#	#}
+  {#	<form method='GET' action="{% url 'cart' %}">#}
+  {#	<br/>#}
+  {#	<p>Number of items:</p>#}
+  {#	<input type='hidden' name='item' value='{{ object.id }}' />#}
+  {#	<input class='form-control' type='number' name='qty' value='1' />#}
+  {##}
+  {#	<br/>#}
+  {##}
+  {#    {% if object.restricted_active %}<p style="color:red;">This item is Restricted. Please, explain your purchase below.</p>#}
+  {#    <textarea name='purchase-intention' rows="5" cols="25"></textarea>#}
+  {#    {% else %}#}
+  {#    <textarea name='purchase-intention' style="display:none;"></textarea>#}
+  {#    {% endif %}#}
+  {##}
+  {#    <input type='submit' value='Add to Cart' class='btn btn-default' />	#}
+  {#	<p><a id='purchase-btn' href="#">Purchase</a></p>#}
+  {#	<div  id='dialog-confirm' title='Confirm Purchase' style='display:none'>#}
+  {#		<p>Your card on file will be charged after you agree below.</p>#}
+  {#	</div>#}
+  {##}
+  {#	{% endif %}#}
+  {#	#}
+  {#	#}
+  {##}
+  {##}
+  {#    </form>#}
+  {##}
+  {#		<p>#}
+  {#			<strong>My Rating</strong>#}
+  {##}
+  {#		<div class="rating">#}
+  {#	    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>#}
+  {#	    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>#}
+  {#	    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>#}
+  {#	    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>#}
+  {#	    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>#}
+  {#		</div>#}
+  {#		<br/>#}
+  {#		<p>#}
+  {#			{{ rating_avg.rating__avg }} Average Rating by {{ rating_avg.rating__count }} Users.#}
+  {#			 #}
+  {#		</p>#}
+  {#	</p>#}
+  {#  #}
+  {##}
+  {#</div>#}
+  {##}
+  {#<div class='clearfix'></div>#}
+
+
+{% endblock %}
+
+{#<script>#}
+{#  $(document).ready(function () {#}
+{#    {% block jquery %}#}
+{##}
+{#      $(".rating input[value='{{ my_rating }}']").attr("checked", "checked");#}
+{##}
+{##}
+{#      $(".rating input[type='radio']").click(function (event) {#}
+{#        // event.preventDefault()#}
+{#        var inputValue = $(this).val()#}
+{#        console.log(inputValue)#}
+{#        var request = $.ajax({#}
+{#          method: "POST",#}
+{#          url: "{% url 'products:ajax_rating' %}",#}
+{#          data: {#}
+{#            product_id: "{{ object.id }}",#}
+{#            rating_value: inputValue,#}
+{##}
+{#          }#}
+{#        })#}
+{#        request.done(function (data) {#}
+{##}
+{#        })#}
+{##}
+{#        request.fail(function (jqXHR, textStatus) {#}
+{#          if (jqXHR.status == 404) {#}
+{#            alert("Page not found!")#}
+{#          } else if (jqXHR.status == 401) {#}
+{#            alert("You must be logged in to do this.")#}
+{#          } else {#}
+{#            alert("There was an error with your request. Please try again.")#}
+{#          }#}
+{#        })#}
+{##}
+{##}
+{#      })#}
+{##}
+{##}
+{##}
+{#      $("#purchase-btn").click(function (event) {#}
+{#        event.preventDefault()#}
+{#        var puchaseBtn = $(this)#}
+{#        $("#dialog-confirm").fadeIn("300")#}
+{#        $("#dialog-confirm").dialog({#}
+{#          resizable: false,#}
+{#          height: 350,#}
+{#          width: 350,#}
+{#          modal: true,#}
+{#          buttons: {#}
+{#            1: {#}
+{#              id: "close",#}
+{#              text: "Confirm",#}
+{#              click: function () {#}
+{#                console.log("confirm")#}
+{#                var request = $.ajax({#}
+{#                  method: "POST",#}
+{#                  url: "{% url 'checkout' %}",#}
+{#                  data: {#}
+{#                    product_id: "{{ object.id }}",#}
+{##}
+{#                  }#}
+{#                })#}
+{#                request.done(function (data) {#}
+{#                  console.log(data.download)#}
+{#                  console.log(data.preview)#}
+{#                  puchaseBtn.before("<p><a href='" + data.download + "'>Download</p><p><a href='" + data.preview + "'>Preview</p>")#}
+{#                  puchaseBtn.fadeOut(100)#}
+{##}
+{#                  // console.log("working...")#}
+{#                  // if (data.works) {#}
+{#                  // 	$("#content").html(data.time)#}
+{#                  // }#}
+{#                })#}
+{##}
+{#                request.fail(function (jqXHR, textStatus) {#}
+{#                  if (jqXHR.status == 404) {#}
+{#                    alert("Page not found!")#}
+{#                  } else if (jqXHR.status == 403) {#}
+{#                    alert("You must be logged in to do this.")#}
+{#                  } else {#}
+{#                    alert("You still have some items pending for this product. Please try later.")#}
+{#                  }#}
+{#                })#}
+{##}
+{##}
+{#                $(this).dialog("close")#}
+{#              },#}
+{#              class: "buy-btn"#}
+{#            },#}
+{#            2: {#}
+{#              id: "close",#}
+{#              text: "Cancel",#}
+{#              click: function () {#}
+{#                $(this).dialog("close")#}
+{#              },#}
+{#              class: "cancel-btn"#}
+{#            }#}
+{#          }#}
+{##}
+{#        })#}
+{#      })#}
+{##}
+{#    {% endblock jquery %}#}
+{#  })#}
+{##}
+{##}
+{#</script>#}
+
+{% block extra_js %}
+<script>
+  $(document).ready(function() {
+    $("input[type=file]").on('change', function(evt) {
+      var txt = $("textarea[name=request_message]");
+      if ( txt.text().length === 0 ) {
+        txt.text("See attached.")
+      }
+    });
+  });
+</script>
+{% endblock %}
+{% block jquery %}
+	$("#rating_get").click(function(){
+        $.ajax({
+          url: '/products/ajax/rating/',
+          method: 'GET',
+          data: {
+            'product_id': {{object.id}}
+          },
+          dataType: 'json',
+          success: function(data) {
+             $("#rating").html("Average Rating: ");
+             $("#rating").append(data.rating);
+             $("#rating").append(" / 5.00  (From ");
+             $("#rating").append(data.count);
+             $("#rating").append(" People) ");
+            }
+	  })
+    });
+
+	$("#rating_post").click(function(){
+	    console.log({{object.id}});
+	    console.log($("#rating_score").val());
+		$.ajax({
+          url: '/products/ajax/rating/',
+          method: 'POST',
+          data: {
+            'product_id': {{object.id}},
+            'rating_value': $("#rating_score").val(),
+          },
+          dataType: 'json',
+          success: function(data) {
+             alert("Rating Successful");
+          },
+          error: function(data){
+             alert("Rating failed. Please note:\n\n1.You can only rate this product once\n2.You can't rate your own product\n3.You have to be logged in to rate");
+          }
+	    })
+	});
+	
+	$('#one_star').click(function(){
+	    $('#two_star').removeClass("checked");
+	    $('#three_star').removeClass("checked");
+	    $('#four_star').removeClass("checked");
+	    $('#five_star').removeClass("checked");
+	    $('#rating_score').val(1);
+	});
+	
+	$('#two_star').click(function(){
+	    $('#one_star').addClass("checked");
+	    $('#two_star').addClass("checked");
+	    $('#three_star').removeClass("checked");
+	    $('#four_star').removeClass("checked");
+	    $('#five_star').removeClass("checked");
+	    $('#rating_score').val(2);
+	});
+	
+	$('#three_star').click(function(){
+	    $('#one_star').addClass("checked");
+	    $('#two_star').addClass("checked");
+	    $('#three_star').addClass("checked");
+	    $('#four_star').removeClass("checked");
+	    $('#five_star').removeClass("checked");
+	    $('#rating_score').val(3);
+	});
+	
+	$('#four_star').click(function(){
+	    $('#one_star').addClass("checked");
+	    $('#two_star').addClass("checked");
+	    $('#three_star').addClass("checked");
+	    $('#four_star').addClass("checked");
+	    $('#five_star').removeClass("checked");
+	    $('#rating_score').val(4);
+	});
+	
+	$('#five_star').click(function(){
+	    $('#one_star').addClass("checked");
+	    $('#two_star').addClass("checked");
+	    $('#three_star').addClass("checked");
+	    $('#four_star').addClass("checked");
+	    $('#five_star').addClass("checked");
+	    $('#rating_score').val(5);
+	});
+{% endblock %}

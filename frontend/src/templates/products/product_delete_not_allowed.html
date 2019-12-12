@@ -1,0 +1,11 @@
+{% extends "marketplace_base.html" %}
+
+{% block page_content %}
+
+{% if error_message %}
+<h3>{{error_message}}</h3>
+{% else %}
+<h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspThis is not your product to delete!</h3>
+{% endif %}
+
+{% endblock %}

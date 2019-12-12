@@ -1,0 +1,10 @@
+[Unit]
+Description=Mosquitto broker for I3 platform
+After=network.target
+
+[Service]
+User=iotm
+ExecStart=/bin/bash -c 'mosquitto -c /home/iotm/iotm/backend/mosquitto/mosquitto.conf 2>&1 | tee /home/iotm/iotm/backend/log/mosquitto.log'
+
+[Install]
+WantedBy=multi-user.target

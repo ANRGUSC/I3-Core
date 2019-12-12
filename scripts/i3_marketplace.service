@@ -1,0 +1,11 @@
+[Unit]
+Description=I3 marketplace server
+After=mysql.service
+
+[Service]
+User=iotm
+ExecStart=/bin/bash -c 'python /home/iotm/iotm/frontend/src/manage.py runserver 0.0.0.0:8088 2>&1 | tee /home/iotm/iotm/frontend/log/marketplace.log'
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

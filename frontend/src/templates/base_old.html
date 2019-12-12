@@ -1,0 +1,63 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- jQuery CSS -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <link rel='stylesheet' href='{% static "css/base.css" %}'/>
+
+</head>
+<body>
+<nav class='main-nav'>
+  <ul class="pull-left first-nav">
+    <li><a href='{% url "dashboard" %}'>I3 Marketplace</a></li>
+  </ul>
+  <ul class='pull-right'>
+    <li><a href='{% url "products:list" %}'>Products</a></li>
+    <li><a href='{% url "tags:list" %}'>Tags</a></li>
+    <!--<li><a href='{% url "library" %}'>Library</a></li>-->
+    <li><a href='{% url "cart" %}'>Cart</a></li>
+  </ul>
+</nav>
+<div class='main-content'>
+
+  <table style="width:100%" border="0">
+    <tr valign="top">
+      <td style="width:20%"><img src='/media/logo/I3_image.png' style="width:128px"/></td>
+      <td>
+        {% block content %}
+        <p>This is awesome</p>
+        {% endblock content %}
+      </td>
+    </tr>
+  </table>
+
+</div>
+
+<!-- jQuery -->
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!--<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>-->
+
+<!-- Bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+<!-- Django -->
+<script src="{{ static('js/django.csrf.js') }}"></script>
+
+<script>
+    $(document).ready(function () {
+        {% block jquery %}
+        {% endblock %}
+    })
+</script>
+
+</body>
+
+</html>

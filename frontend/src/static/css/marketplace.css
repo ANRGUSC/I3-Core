@@ -1,0 +1,229 @@
+/*!
+ * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+  padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+  /*background-color: #f7f7f7;*/
+  color: #666
+}
+
+.navbar {
+  font-size: 16px;
+}
+
+.navbar-brand {
+  padding: 10px;
+}
+
+.navbar-brand img {
+  width: 40px;
+}
+
+.dropdown-container {
+  left: -400px;
+}
+
+.notification-box th, .notification-box td {
+  text-align: center;
+}
+
+.notification-box th:first-child, .notification-box td:first-child {
+  text-align: left;
+}
+
+.notification-box th:nth-child(2), .notification-box td:nth-child(2) {
+  text-align: left;
+}
+
+.notification-box button.btn-link {
+  padding: 0 5px 0 0;
+}
+
+.notifications {
+  width: 350px;
+  padding: 0;
+}
+
+.notifications .divider {
+  margin: 0;
+}
+
+.notification-read {
+
+}
+
+.notification-unread {
+  color: #a94442;
+  background-color: #f2dede;
+}
+
+.notification-unread a {
+  color: #a94442 !important;
+}
+
+.notification-unread a:hover {
+  background-color: #ffbeb4 !important;
+}
+
+.slide-image {
+  width: 100%;
+}
+
+.carousel-holder {
+  margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+  border-radius: 4px;
+}
+
+.caption {
+  height: 130px;
+  overflow: hidden;
+}
+
+.caption h4 {
+  white-space: nowrap;
+}
+
+/*.thumbnail img {*/
+/*width: 100%;*/
+/*}*/
+
+.ratings {
+  padding-right: 10px;
+  padding-left: 10px;
+  color: #d17581;
+}
+
+.thumbnail {
+  padding: 0;
+}
+
+.thumbnail .caption-full {
+  padding: 9px;
+  color: #333;
+}
+
+footer {
+  /*margin: 20px 0;*/
+}
+
+.footer {
+  /*position: fixed;*/
+  /*bottom: 0;*/
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  /*background-color: #f7f7f7;*/
+}
+
+.footer .container p {
+  margin: 20px 0;
+}
+
+.product-nopadding {
+  padding: 0;
+}
+
+.product-nopadding h3 {
+  padding: 0 15px;
+}
+
+.product .thumbnail-small img {
+  width: auto;
+  height: 150px;
+}
+
+.product .thumbnail-large img {
+  max-height: 300px;
+}
+
+.product .product-title {
+  margin-bottom: 0;
+}
+
+.product .product-seller {
+  font-style: italic;
+}
+
+.image-detail {
+  margin-bottom: 10px;
+}
+
+.image-detail img {
+  width: 100%;
+  min-height: 265px;
+  max-height: 400px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.title-detail {
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.table-detail tr td:first-child {
+  width: 100px;
+}
+
+.table-detail tr td {
+  vertical-align: middle !important;
+}
+
+.table-detail tr td:first-child::after {
+  float: right;
+  content: ':';
+}
+
+table.table td {
+  vertical-align: middle !important;
+}
+
+table.cart th, table.cart td {
+  text-align: center;
+}
+
+table.cart td:first-child, table.cart th:first-child {
+  text-align: left;
+}
+
+table.cart td:nth-child(2), table.cart th:nth-child(2) {
+  text-align: left;
+}
+
+.price {
+  color: #666;
+}
+
+.price-old {
+  position: relative;
+  display: inline-block;
+  margin-top: 5px;
+  margin-right: 7px;
+  color: #ef5350;
+}
+
+/*.price-old:before {*/
+  /*position: absolute;*/
+  /*width: 100%;*/
+  /*height: 60%;*/
+  /*content: '';*/
+  /*border-bottom: 1px solid #666;*/
+/*}*/
+
+.input-qty {
+  width: 100px;
+  float: left;
+  margin-right: 20px;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  opacity: 1;
+}

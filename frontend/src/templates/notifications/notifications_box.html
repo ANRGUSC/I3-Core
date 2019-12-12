@@ -1,0 +1,51 @@
+{% extends 'marketplace_base.html' %}
+{% load static %}
+
+{%  block title %}I3 Marketplace | Notifications{% endblock %}
+
+{% block page_content %}
+
+<div class="container">
+<div class="row">
+  <h1>Notifications</h1>
+  <div class="col-sm-10 col-sm-offset-1">
+    {% csrf_token %}
+    <table class="table table-striped notification-box">
+      <thead>
+      <tr>
+        <th style="width: 250px;">Subject</th>
+        <th>Body</th>
+        <th style="width: 230px;">Date</th>
+        <th style="width: 200px;">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for notification in box.get_unarchived %}
+        <tr {% if not notification.read %}class="info"{% endif %}>
+          <td>{{ notification.subject }}</td>
+          <td>{{ notification.body }}</td>
+          <td>{{ notification.timestamp|date:'r' }}</td>
+          <td>
+            {% if not notification.read %}
+            <button class="btn btn-link" data-notification-id="{{ notification.id }}" data-task="read">Mark Read</button>
+            {% else %}
+            <button class="btn btn-link" data-notification-id="{{ notification.id }}" data-task="unread">Mark Unread</button>
+            {% endif %}
+            &middot;&nbsp;
+            <button class="btn btn-link" data-notification-id="{{ notification.id }}" data-task="delete">Delete</button>
+          </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="4">
+            <i>You don't have any notifications.</i>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+{% endblock %}

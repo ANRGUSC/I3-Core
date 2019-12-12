@@ -1,0 +1,65 @@
+project overview:
+
+In V0, sellers and buyers are completely equal and symmetric, and V0's system design is hard coded in this way
+In V1, there's a device layer on the seller side, so seller and buyer became asymmetric
+However, still want to inherit from V0 (and of course, the backend will not be elegant, but it'll work)
+
+Authentication table USERS: stores identity info of buyers and seller_devices, treat them as equal
+(MQTT connect requests are sent from buyers or seller_devices, not sellers)
+{
+    id: primary key
+    username: if seller, is {USER_NAME}; if buyer device, is {USER_NAME}/{HUB_NAME}/{DEVICE_NAME}
+    pw: if buyer, is np hashed credential; if seller_device, is public_key string or no hashed api_key
+    super: if is superuser (extempt from acl check), 1; else, 0
+    owner (foreign key references table AUTH_USER's id field): {USER_ID} (a buyer belongs to himself, a seller_device belongs to the seller)
+    hub (foreign key references table HUB's name field): if buyer, NULL; if seller_device, is name of hub to which this device belongs
+    (about hub: if a seller wants to register a device under different hubs, there'll be multiple identities for this device)
+}
+
+Authorization table ACLS: permissions of buyers ans seller_devices
+{
+    id: primary key
+    topic_id: FOREIGN KEY REFERENCES products_product(id)
+    hub (foreign key references hub's id or name field): which hub this topic belongs to
+    rw : read-only, 2: read-write
+    topic_name: {NAME_OF_USER_WHO_CREATED_THIS_TOPIC}/{HUB_NAME}/{TOPIC_NAME}
+    username: if buyer, is {BUYER_NAME}; if seller registers a topic, is device name: {SELLER_NAME}/{HUB_NAME}/{DEVICE_NAME}
+}
+
+In V1, a hub should be defined as a model, {id, seller_name, name}, in which the name consists of: {USER_NAME}/{HUB_NAME}
+this will be stored as a backend table called hubs
+
+views for hub: hub_list_view, hub_detail_view, hub_create_view
+
+hub_list_view: select NAME from table HUB where seller = {USER_NAME}
+    @login_required, function based
+    input: request
+    user_name = request.user.username
+    hub_list = SELECT hub_name from hubs WHERE seller_name = user_name
+    render(list_view_template, hub_list)
+    
+hub_create_view:
+    @login_required, function based
+    input: request
+    get username from request
+    render username to template (hub name must be in format {USER_NAME}/{HUB_NAME})
+    get info from template
+    if request is post, create a form
+    inside forms.py, check valid, then clean (see details in that file)
+    save to database
+    
+hub_detail_view:
+    first part:
+        1. select topic_names from ACLS where hub = this->hub
+        2. select usernames from ACLS where hub = this->hub
+    second part: create device
+        upon clicking, direct to create_device view
+    thrid part: create topic
+        upon clicking, direct to create_product view
+        
+products: add a field HUB in create product view
+device: create_device view
+        
+        
+        
+

@@ -1,0 +1,68 @@
+#!/bin/bash
+#
+# description: Parser agent for I3 platform
+#
+
+name=`basename $0`
+pid_file="/var/run/$name.pid"
+
+get_pid() {
+    cat "$pid_file"
+}
+
+is_running() {
+    [ -f "$pid_file" ] && ps -p `get_pid` > /dev/null 2>&1
+}
+
+### main logic ###
+case "$1" in
+  start)
+    if is_running; then
+        echo "Already started"
+    else
+        echo "Starting $name"
+        /bin/bash -c '/usr/bin/python /home/iotm/iotm/backend/parser_agent.py 2>&1 | tee /home/iotm/iotm/backend/log/parser.log' &
+        echo $! > "$pid_file"
+        if ! is_running; then
+            echo "Unable to start"
+            exit 1
+        fi
+    fi
+    ;;
+  stop)
+    if is_running; then
+        echo "Stopping $name"
+        for KILLPID in `ps ax | grep 'manage' | awk ' { print $1;}'`; do 
+  	    kill -9 $KILLPID;
+        done
+        if is_running; then
+            echo "Error stopping, may need to stop again."
+            exit 1
+        else
+            echo "Stopped"
+            if [ -f "$pid_file" ]; then
+                rm "$pid_file"
+            fi
+        fi
+    else
+        echo "Not running"
+    fi
+    ;;
+  status)
+    if is_running; then
+        echo "Running"
+    else
+        echo "Stopped"
+        exit 1
+    fi
+    ;;
+  restart|reload|condrestart)
+    stop
+    start
+    ;;
+  *)
+    echo $"Usage: $0 {start|stop|restart|reload|status}"
+    exit 1
+esac
+
+exit 0

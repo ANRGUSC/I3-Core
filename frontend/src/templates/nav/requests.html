@@ -1,0 +1,39 @@
+{% if request.user.is_seller %}
+  <li class="dropdown dropdown-notifications" id="dropdown-requests">
+    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      {% if request.user.get_seller_requests.count > 0 %}
+        <i data-count="{{ request.user.get_seller_requests.count }}" class="glyphicon glyphicon-envelope notification-icon"></i>
+      {% else %}
+        <i class="glyphicon glyphicon-envelope"></i>
+      {% endif %}
+    </a>
+    <div class="dropdown-container">
+
+      <div class="dropdown-toolbar">
+        <div class="dropdown-toolbar-actions" style="margin-top: -2px;">
+          <a href="#">Approve all</a>
+        </div>
+        <h3 class="dropdown-toolbar-title">Requests</h3>
+      </div><!-- /dropdown-toolbar -->
+
+      <ul class="dropdown-menu">
+        {% for request in request.user.get_seller_requests %}
+          {% include 'notifications/requests_snippet.html' with request=request %}
+        {% empty %}
+          <li class="notification">
+            <div class="media">
+              <div class="media-body">
+                <em class="notification-title">No pending requests.</em>
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+
+{#      <div class="dropdown-footer text-center">#}
+{#        <a href="{% url 'notifications:list' %}">View All</a>#}
+{#      </div><!-- /dropdown-footer -->#}
+
+    </div><!-- /dropdown-container -->
+  </li>
+{% endif %}
