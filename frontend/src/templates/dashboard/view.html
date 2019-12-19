@@ -1,0 +1,84 @@
+{% extends "marketplace_base.html" %}
+
+{%  block title %}I3 Marketplace | Dashboard{% endblock %}
+
+{% block page_content %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9">
+        <h1>Dashboard</h1>
+      </div>
+      {% if request.user.is_seller %}
+      <div class="col-sm-3 center-block" style="height: 69px;">
+        <a href="{% url 'products:create' %}" class="btn btn-default pull-right" style="margin: 17px 0;">
+          <span class="glyphicon glyphicon-plus"></span>
+          Add Product
+        </a>
+      </div>
+      {% endif %}
+    </div>
+
+      <h3>Purchased Products: <h4>Products you bought</h4></h3>
+      {% if purchased %}
+        <div class="row">
+          <div class="col-md-12 product-nopadding">
+            {% include 'products/product_list_snippet.html' with product_list=purchased size='3' %}
+          </div>
+        </div>
+      {% endif %}
+      <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=1)" width="80%" color=#987cb9 SIZE=3>
+
+      <h3>My Products: <h4>Products you created</h4></h3>
+      {% if sales %}
+        <div class="row">
+          <div class="col-md-12 product-nopadding">
+            {% include 'products/product_list_snippet.html' with product_list=sales size='3' %}
+          </div>
+        </div>
+      {% endif %}
+      <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=1)" width="80%" color=#987cb9 SIZE=3>
+    
+      <h3>Suggested Products: <h4>Your personal recommendation engine</h4></h3>
+      {% if products %}
+        <div class="row">
+          <div class="col-md-12 product-nopadding">
+            {% include 'products/product_list_snippet.html' with product_list=products size='3' %}
+          </div>
+        </div>
+      {% endif %}
+  </div>
+  <!-- /.container -->
+
+  {#<div>#}
+  {#  <h1>Suggested Products</h1>#}
+  {#  {% include "products/product_list_snippet.html" with product_list=products %}#}
+  {##}
+  {#</div>#}
+  {#<div>#}
+  {#  <h1>Tops Tags</h1>#}
+  {#  <ul>#}
+  {#    {% for tag in top_tags %}#}
+  {#    <li><a href="{{ tag.get_absolute_url }}">{{ tag }}</a></li>#}
+  {#    {% endfor %}#}
+  {#  </ul>#}
+  {#</div>#}
+  {##}
+  {##}
+  {#{% if curated.count > 0 %}#}
+  {#{% for curated_section in curated %}#}
+  {##}
+  {##}
+  {#<div>#}
+  {#  <h1>{{ curated_section.section_name }}</h1>#}
+  {##}
+  {#  {% include "products/product_list_snippet.html" with product_list=curated_section.products.all %}#}
+  {##}
+  {#</div>#}
+  {##}
+  {#{% endfor %}#}
+  {##}
+  {#{% endif %}#}
+{% endblock %}
+
+

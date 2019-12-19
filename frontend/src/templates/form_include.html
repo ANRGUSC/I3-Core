@@ -1,0 +1,86 @@
+<!--
+<form method="POST" action="" enctype='multipart/form-data'>
+{% csrf_token %}
+{{ form.as_p }}
+<input type='submit' value='{% if submit_btn %}{{ submit_btn }}{% else %}Submit{% endif %}' />
+</form>
+-->
+<div class="container">
+    <form method="POST" action="" enctype='multipart/form-data'>
+      <h1>Update Product</h1>
+      <h3>Invalid Input Will Lead To Redirection To This Page</h3>
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="form-group">
+            <label for="{{ form.title.id_for_label }}">Topic</label>
+            <h5>Product Name Can't Be Changed</h5>
+            <input type="text" value="{{ form.title.value }}" readonly><br>
+            {{ form.title.as_hidden|default:form.title.value }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="form-group">
+            <label for="{{ form.hub.id_for_label }}">Hub</label>
+            <h5>Product Hub Can't Be Changed</h5>
+            <input type="text" value="{{ form.hub.value }}" readonly><br>
+            {{ form.hub.as_hidden }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="form-group">
+            <label for="{{ form.media.id_for_label }}">Media</label>
+            {{ form.media }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="form-group">
+            <label for="{{ form.sensor_type.id_for_label }}"><font color="#ff0000">Sensor Type</font></label>
+            <h5>Previous Read-Write Permmissions For This Product Will Remain Unchanged</h5>
+            {{ form.sensor_type }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+         <div class="form-group">
+            <label for="{{ form.restricted_active.id_for_label }}"><font color="#ff0000">Restricted</font></label>
+            {{ form.restricted_active }}
+            <h5>You Still Need To Approve/Decline Previous Requests For This Product</h5>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="form-group">
+            <label for="{{ form.description.id_for_label }}">Description</label>
+            {{ form.description }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="form-group">
+            <label for="{{ form.price.id_for_label }}">Price</label>
+            {{ form.price }}
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="form-group">
+            <label for="{{ form.price.id_for_label }}">Sale Price</label>
+            <div class="input-group">
+              <span class="input-group-addon">{{ form.sale_active }}</span>
+              {{ form.sale_price }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <input type='submit' value='{% if submit_btn %}{{ submit_btn }}{% else %}Submit{% endif %}' />
+    </form>
+  </div>

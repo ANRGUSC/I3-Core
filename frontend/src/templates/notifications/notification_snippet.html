@@ -1,0 +1,11 @@
+<li class="notification notification-{% if notification.read %}read{% else %}unread{% endif %}">
+  <div class="media">
+    <div class="media-body">
+      <strong class="notification-title">{{ notification.subject }}</strong>
+      <p class="notification-desc">{{ notification.body }}</p>
+      <div class="notification-meta">
+        <small class="timestamp">{{ notification.timestamp|date:'r' }}</small>
+      </div>
+    </div>
+  </div>
+</li>

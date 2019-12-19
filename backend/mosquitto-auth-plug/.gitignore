@@ -1,0 +1,7 @@
+*.swp
+*.o
+*.so
+*.pyc
+jp*.conf
+*.a
+sundry

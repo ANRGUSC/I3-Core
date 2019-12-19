@@ -1,0 +1,25 @@
+FROM ubuntu:16.04
+
+ENV MOSQUITTO_VERSION=1.4.14
+
+# how to build the mosquitto image for V1
+# install mosquitto using git-clone
+# install python 2.7
+# pip install pyjwt
+# copy jwt python script to image
+# modify pyjwt path in auth plugin
+# compile mosquitto-auth-plugin locally
+# copy the .so file to /mqtt
+
+# a better way is to copy the auth-plugin source code
+# from local directory into docker
+# and compile it inside
+# just copying a bin file is not flexible
+# if this is the case
+# should install python, pyjwt, <Python.h>
+# specify the container path in auth-plugin Makefile (location of python.h)
+# specify the path to call
+
+RUN mkdir /zxc
+
+COPY /backend /zxc/

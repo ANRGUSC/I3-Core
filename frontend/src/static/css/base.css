@@ -1,0 +1,63 @@
+body {
+	height: 100%;
+	/*background-color: #e8e8e8;*/
+}
+
+
+.main-content {
+	width: 800px;
+	margin: 0 auto;
+	clear:both;
+}
+
+.main-nav {
+	width: 800px;
+	margin: 10px auto;
+}
+
+.main-nav li {
+	display: inline;
+}
+
+.first-nav {
+	padding-left:0px;
+}
+
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
+}
+
+.col-primary {
+	width: 85%;
+}
+
+.col-sidebar {
+	padding-top: 20px;
+	width: 15%;
+}
+
+.clearfix {
+	clear:both;
+}
+
+#purchage-btn {
+	color: red;
+}
+
+button.buy-btn {
+	border: 1px solid #DA5B00 !important;
+	background: #DA5B00 !important;
+}
+
+button.buy-btn .ui-button-text {
+	color: #ffffff;
+}
+
+.ui-widget-header {
+	border: 1px solid #ffffff !important;
+	background: #ffffff !important;
+}

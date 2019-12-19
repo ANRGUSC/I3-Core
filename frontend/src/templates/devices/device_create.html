@@ -1,0 +1,28 @@
+{% extends "marketplace_base.html" %}
+
+{% block page_content %}
+
+<div class="container">
+  <form method="POST" action="" enctype='multipart/form-data'>
+    <h1>Create new Device:</h1>
+    <h3>Invalid Input Will Lead To Redirection To This Page</h3>
+    {% csrf_token %}
+    <h4>Hub Name:</h4>
+    <h5>must be an existing hub of yours, enter only hub name</h5>
+    {{form.hub_name}}
+    <h4>Device Name: (No duplicates allowed)</h4>
+    <h5>must be alphanumeric, 3-30 characters long</h5>
+    {{form.name}}
+    <h4>Registration Type:</h4>
+    {{form.rgs_type}}
+    <h4>Password or Public Key:</h4>
+    <h5>must be 6-500 characters long</h5>
+    {{form.password}}
+    
+    <br></br>
+    <button type="submit" value='OK' class="btn btn-primary">Create</button>
+  </form>
+</div>
+<!-- /.container -->
+
+{% endblock %}

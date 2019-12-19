@@ -1,0 +1,30 @@
+{% load staticfiles %}
+{% load get_thumbnail %}
+
+<!--will move this button to hub later-->
+<div class="col-sm-12">
+  <br>
+  <div class="btn-group">
+    <a href="{% url 'products:create' %}" class="btn btn-primary">Create a Product</a>
+    <br></br><br></br>
+  </div>
+</div>
+<!--end will move this button to hub later-->
+
+{% for instance in product_list %}
+<div class="col-sm-{% firstof size '3' %} product">
+  <div class="thumbnail thumbnail-small">
+    <img src="{{ instance|get_thumbnail:"sd" }}" alt="">
+    <div class="caption">
+      <h4 class="product-price pull-right">${{ instance.get_price }}</h4>
+      <h4 class="product-title">
+        <a href="{{ instance.get_absolute_url }}">{{ instance.title }}</a>
+      </h4>
+      <p class="product-seller">by {{ instance.get_seller_username }}</p>
+      <p>{{ instance.description }}</p>
+    </div>
+  </div>
+</div>
+{% empty %}
+<h3>Other People Haven't Created Any Products</h3>
+{% endfor %}

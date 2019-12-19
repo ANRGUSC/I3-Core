@@ -1,0 +1,45 @@
+{% extends "marketplace_base.html" %}
+{% load staticfiles %}
+{% load get_thumbnail %}
+
+{% block title %}
+  I3 Marketplace | Products
+{% endblock %}
+
+{% block page_content %}
+
+<script>
+function getSearchValue() {
+  var q = document.getElementById("site-search").value;
+  window.location.href = `/products/?q=${q}`;
+}
+function getValue() {
+  window.location.href = `/products/`;
+}
+function switchToMap() {
+  window.location.href = `/products/map/`;
+}
+</script>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Products On The Marketplace <button class="pull-right" onclick="switchToMap()">Switch to Map View</button> </h2>
+          <div class="row">
+            <div class="col-md-12">
+              <label>Search Seller, Hub, Name or Description:</label>
+              <input type="text" id="site-search" value="{{ default_query }}">
+                <button id="search" onclick="getSearchValue()">Search</button>
+                <button onclick="getValue()">All Products</button>
+              <br></br>
+            </div>
+          </div>
+{#          <div class="row" id="product_display">#}
+        {% include 'products/product_list_snippet.html' with product_list=product_list %}
+{#          </div>#}
+    </div>
+  </div>
+</div>
+<!-- /.container -->
+
+{% endblock %}

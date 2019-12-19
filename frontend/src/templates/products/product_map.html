@@ -1,0 +1,105 @@
+{% extends "marketplace_base.html" %}
+{% load staticfiles %}
+{% load get_thumbnail %}
+
+{% block title %}
+  I3 Marketplace | Products_Map
+{% endblock %}
+
+{% block page_content %}
+
+<!-- a list of products with id, coordinates and name are passed here from the view -->
+<script src="https://maps.googleapis.com/maps/api/js?key=<INSERT GOOGLE MAP API>&callback=myMap"></script>
+<script>
+  var myCenter=new google.maps.LatLng(34.02,-118.29);
+  
+  function initialize() {
+    var product_list = {{ product_list|safe }};
+    /** id, long, lat, name */
+    
+    var mapProp = {
+      center:myCenter,
+      zoom:10,
+      mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+
+    var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    
+    var marker_list = [];
+    var pk = -1;
+    var infowindow = new google.maps.InfoWindow();
+    for(var i=0; i<product_list.length; i++) {
+      var product_pos = new google.maps.LatLng(product_list[i][2], product_list[i][1]);
+      var marker=new google.maps.Marker({  
+        position: product_pos,
+        pk: product_list[i][0],
+        title: product_list[i][3],
+      });
+      google.maps.event.addListener(marker, 'click', function() {
+        window.location.href = `/products/${this.pk}/`;
+      });
+      google.maps.event.addListener(marker, 'mouseover', function() {
+        infowindow.setContent(this.title);
+        infowindow.open(map, this);
+      });
+      
+      google.maps.event.addListener(marker, 'mouseout', function() {
+        infowindow.close();
+      });
+      marker.setMap(map);
+    }
+    
+  }
+  
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<script>
+function switchToList() {
+  window.location.href = `/products/`;
+}
+function getSearchValue() {
+  var q = document.getElementById("query_search").value;
+  window.location.href = `/products/map/?q=${q}`;
+}
+function getValue() {
+  window.location.href = `/products/map/`;
+}
+</script>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Products On The Marketplace <button class="pull-right" onclick="switchToList()">Switch to List View</button></h2>
+          <div class="row">
+            <div class="col-md-12">
+              <label>Search Seller, Hub, Name or Description:</label>
+                <input type="text" id="query_search" value="{{default_query}}"></input>
+                  <button id="search" onclick="getSearchValue()">Search</button>
+                  <button onclick="getValue()">All Products</button>
+                <br></br>
+                <!--<label>Search Longitude, Latitude and Radius:</label>
+                <input type="text" id="circle_search" value="NOT FINISHED YET"></input>
+                  <button id="search" onclick="getSearchValue()">Search</button>
+                  <button onclick="getValue()">All Products</button>
+                <br></br>-->
+            </div>
+            <br></br>
+            <!--
+            <div>
+            <span>
+              <h5>Search Products Near a Location:</h5>
+              <input type="number" step="0.01" id="site-search" placeholder="Latitude" class="col-md-2"></input>
+              <input type="number" step="0.01" id="site-search" placeholder="Longitude" class="col-md-2"></input>
+              <input type="number" step="0.01" id="site-search" placeholder="Radius" class="col-md-2"></input>
+            </span>
+            </div>
+            <br></br>
+            -->
+            <div id="googleMap" style="width:100%; height:600px; display:block; margin-left:auto; margin-right:auto;"></div>
+          </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

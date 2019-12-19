@@ -1,0 +1,31 @@
+{% extends "marketplace_base.html" %}
+
+{% block page_content %}
+
+  <div class="container">
+    {% if is_private is True %}
+    <h3>This is a private Hub, this page is only viewable to you</h3>
+    {% else %}
+    <h3>This is a public Hub, this page is viewable to everyone</h3>
+    {% endif %}
+    <h3>Devices in this hub</h3>
+    {% for device in device_list %}
+    <h4>{{device.name}}  <a href="/devices/delete/{{device.id}}">&nbsp&nbsp<button class="btn btn-danger">Delete Device</button></a><a href="/devices/edit/{{device.id}}">&nbsp&nbsp<button class="btn btn-warning">Edit Device</button></a></h4> 
+    {% empty %}
+    <h4>No Device in This Hub</h4>
+    {% endfor %}
+    <a href="/devices/create"><button class="btn btn-primary">Create Device</button></a>
+
+    <br></br><br></br>
+
+    <h3>Products in this hub</h3>
+    {% for product in product_list %}
+    <a href="/products/{{product.id}}"><h4>{{product.title}}<a href="/products/delete/{{product.id}}">&nbsp&nbsp<button class="btn btn-danger">Delete Product</button></a><a href="/products/{{product.id}}/edit">&nbsp&nbsp<button class="btn btn-warning">Edit Product</button></a></h4></a>
+    {% empty %}
+    <h4>No Product in This Hub</h4>
+    {% endfor %}
+    <a href="/products/create"><button class="btn btn-primary">Create Product</button></a>
+  </div>
+  <!-- /.container -->
+
+{% endblock %}
