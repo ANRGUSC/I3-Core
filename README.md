@@ -16,15 +16,15 @@ The I3 marketplace is implemented with a web-based marketplace frontend connecte
 2. https://i3user.readthedocs.io/en/latest/
 
 
-## [front-end](https://github.com/ANRGUSC/iotm/tree/master/frontend)
+## [front-end](https://github.com/ANRGUSC/I3-Core/tree/master/frontend)
 
 The frontend of I3 is a marketplace built using [Django](https://www.djangoproject.com), a Python Web framework that is widely used for websites with large databases. I3 is also built upon the open source code by [Digital Marketplace](https://github.com/codingforentrepreneurs/digital-marketplace), which provided much of the structure and functionality for buying and selling digital products. Digital Marketplace is an implementation of Django.
 
-## [back-end](https://github.com/ANRGUSC/iotm/tree/master/backend)
+## [back-end](https://github.com/ANRGUSC/I3-Core/tree/master/backend)
 
 The backend uses [eclipse mosquitto](https://mosquitto.org), an implementation of [mqtt](http://mqtt.org) protocol, as the platform to broker messages between publishers and subscribers.
 
-### [scripts](https://github.com/ANRGUSC/iotm/tree/master/scripts)
+### [scripts](https://github.com/ANRGUSC/I3-Core/tree/master/scripts)
 
 Scripts to be run at boot up.
 
