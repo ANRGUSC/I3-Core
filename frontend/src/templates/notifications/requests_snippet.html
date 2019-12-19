@@ -1,0 +1,15 @@
+<li class="notification">
+  <div class="media">
+    <div class="media-body">
+      <strong class="notification-title">
+        {{ request.requester }} requested access for {{ request.product }}
+      </strong>
+      <p class="notification-desc">{{ request.intention }}</p>
+      <div class="notification-meta request-tasks">
+{#        <small class="timestamp">{{ notification.timestamp|date }}</small>#}
+        <button data-id="{{ request.id }}" data-task="approve" class="btn btn-primary">Approve</button>
+        <button data-id="{{ request.id }}" data-task="decline" class="btn btn-warning">Decline</button>
+      </div>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,174 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module accounts.views</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="accounts.html"><font color="#ffffff">accounts</font></a>.views</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/erika/Desktop/I3/iotm/frontend/src/accounts/views.py">/home/erika/Desktop/I3/iotm/frontend/src/accounts/views.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="django.html">django</a><br>
+</td><td width="25%" valign=top><a href="django.forms.html">django.forms</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="django.views.generic.base.html#View">django.views.generic.base.View</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="accounts.views.html#LoginView">LoginView</a>
+</font></dt><dt><font face="helvetica, arial"><a href="accounts.views.html#LogoutView">LogoutView</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="LoginView">class <strong>LoginView</strong></a>(<a href="django.views.generic.base.html#View">django.views.generic.base.View</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Displays&nbsp;a&nbsp;login&nbsp;page.<br>
+&nbsp;<br>
+(<a href="django.views.generic.base.html#View">View</a>)<br>
+&nbsp;<br>
+**Context**<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+**Template**<br>
+&nbsp;<br>
+:template:`registration/login.html`<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="accounts.views.html#LoginView">LoginView</a></dd>
+<dd><a href="django.views.generic.base.html#View">django.views.generic.base.View</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="LoginView-delete"><strong>delete</strong></a>(self, request, *args, **kwargs)</dt><dd><tt>If&nbsp;user&nbsp;is&nbsp;authenticated,&nbsp;will&nbsp;redirect&nbsp;to&nbsp;current&nbsp;http&nbsp;request&nbsp;instance,&nbsp;otherwise&nbsp;to&nbsp;login&nbsp;page.</tt></dd></dl>
+
+<dl><dt><a name="LoginView-get"><strong>get</strong></a>(self, request, *args, **kwargs)</dt><dd><tt>Redirects&nbsp;to&nbsp;dashboard&nbsp;page&nbsp;page&nbsp;if&nbsp;user&nbsp;is&nbsp;authenticated,&nbsp;else&nbsp;renders&nbsp;login&nbsp;page.</tt></dd></dl>
+
+<dl><dt><a name="LoginView-post"><strong>post</strong></a>(self, request, *args, **kwargs)</dt><dd><tt>Submits&nbsp;user&nbsp;and&nbsp;name&nbsp;and&nbsp;password&nbsp;for&nbsp;authentication,&nbsp;raises&nbsp;errors&nbsp;if&nbsp;input&nbsp;is&nbsp;invalid.&nbsp;Redirects&nbsp;to&nbsp;dashboard&nbsp;if&nbsp;user&nbsp;is&nbsp;authenticated.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="django.views.generic.base.html#View">django.views.generic.base.View</a>:<br>
+<dl><dt><a name="LoginView-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>Constructor.&nbsp;Called&nbsp;in&nbsp;the&nbsp;URLconf;&nbsp;can&nbsp;contain&nbsp;helpful&nbsp;extra<br>
+keyword&nbsp;arguments,&nbsp;and&nbsp;other&nbsp;things.</tt></dd></dl>
+
+<dl><dt><a name="LoginView-dispatch"><strong>dispatch</strong></a>(self, request, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="LoginView-http_method_not_allowed"><strong>http_method_not_allowed</strong></a>(self, request, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="LoginView-options"><strong>options</strong></a>(self, request, *args, **kwargs)</dt><dd><tt>Handles&nbsp;responding&nbsp;to&nbsp;requests&nbsp;for&nbsp;the&nbsp;OPTIONS&nbsp;HTTP&nbsp;verb.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="django.views.generic.base.html#View">django.views.generic.base.View</a>:<br>
+<dl><dt><a name="LoginView-as_view"><strong>as_view</strong></a>(cls, **initkwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Main&nbsp;entry&nbsp;point&nbsp;for&nbsp;a&nbsp;request-response&nbsp;process.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="django.views.generic.base.html#View">django.views.generic.base.View</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="django.views.generic.base.html#View">django.views.generic.base.View</a>:<br>
+<dl><dt><strong>http_method_names</strong> = [u'get', u'post', u'put', u'patch', u'delete', u'head', u'options', u'trace']</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="LogoutView">class <strong>LogoutView</strong></a>(<a href="django.views.generic.base.html#View">django.views.generic.base.View</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Displays&nbsp;a&nbsp;logout&nbsp;page.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="accounts.views.html#LogoutView">LogoutView</a></dd>
+<dd><a href="django.views.generic.base.html#View">django.views.generic.base.View</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="LogoutView-get"><strong>get</strong></a>(self, request, *args, **kwargs)</dt><dd><tt>redirect&nbsp;to&nbsp;logout&nbsp;page</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="django.views.generic.base.html#View">django.views.generic.base.View</a>:<br>
+<dl><dt><a name="LogoutView-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>Constructor.&nbsp;Called&nbsp;in&nbsp;the&nbsp;URLconf;&nbsp;can&nbsp;contain&nbsp;helpful&nbsp;extra<br>
+keyword&nbsp;arguments,&nbsp;and&nbsp;other&nbsp;things.</tt></dd></dl>
+
+<dl><dt><a name="LogoutView-dispatch"><strong>dispatch</strong></a>(self, request, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="LogoutView-http_method_not_allowed"><strong>http_method_not_allowed</strong></a>(self, request, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="LogoutView-options"><strong>options</strong></a>(self, request, *args, **kwargs)</dt><dd><tt>Handles&nbsp;responding&nbsp;to&nbsp;requests&nbsp;for&nbsp;the&nbsp;OPTIONS&nbsp;HTTP&nbsp;verb.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="django.views.generic.base.html#View">django.views.generic.base.View</a>:<br>
+<dl><dt><a name="LogoutView-as_view"><strong>as_view</strong></a>(cls, **initkwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Main&nbsp;entry&nbsp;point&nbsp;for&nbsp;a&nbsp;request-response&nbsp;process.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="django.views.generic.base.html#View">django.views.generic.base.View</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="django.views.generic.base.html#View">django.views.generic.base.View</a>:<br>
+<dl><dt><strong>http_method_names</strong> = [u'get', u'post', u'put', u'patch', u'delete', u'head', u'options', u'trace']</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-register_page"><strong>register_page</strong></a>(request)</dt><dd><tt>Displays&nbsp;a&nbsp;page&nbsp;that&nbsp;creates&nbsp;a&nbsp;user&nbsp;and&nbsp;registers&nbsp;the&nbsp;user.<br>
+&nbsp;<br>
+:model:`accounts.User`<br>
+&nbsp;<br>
+If&nbsp;request&nbsp;is&nbsp;POST&nbsp;and&nbsp;fields&nbsp;are&nbsp;valid,&nbsp;sends&nbsp;confirmation&nbsp;email&nbsp;and&nbsp;creates&nbsp;a&nbsp;User&nbsp;object,&nbsp;then&nbsp;redirects&nbsp;to&nbsp;dashboard.&nbsp;Otherwise&nbsp;displays&nbsp;a&nbsp;new&nbsp;create&nbsp;user&nbsp;page.<br>
+&nbsp;<br>
+**Context**<br>
+&nbsp;<br>
+``form``:&nbsp;instance&nbsp;of&nbsp;ResgistrationForm<br>
+&nbsp;<br>
+**Template**<br>
+&nbsp;<br>
+:template:`dashboard/createuser.html`</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>CHOICES</strong> = (('1', 'Seller'), ('2', 'Buyer'), ('3', 'Both'))<br>
+<strong>TYPE_DICT</strong> = {u'1': u'Seller', u'2': u'Buyer', u'3': u'Both'}<br>
+<strong>unicode_literals</strong> = _Feature((2, 6, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 131072)</td></tr></table>
+</body></html>

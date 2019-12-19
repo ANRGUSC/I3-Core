@@ -1,0 +1,27 @@
+{% extends "marketplace_base.html" %}
+{% block title %}I3 Marketplace | Create API Key{% endblock %}
+
+{% block page_content %}
+<div class="container">
+	<form method="POST" action="" enctype='multipart/form-data'>
+		{% csrf_token %}
+		<h1>Create New API Key</h1>
+		<div class="row"> 
+			<div class="col-sm-6">
+				<p>You are applying for an API key to access your account through the API. This gives anyone with the key full access to your account. Please keep this key secure. By clicking <font color="#ff0000"><i>Acknowledge and Create</i></font> you are applying for an API key and are aware of the measures you must take to keep your account secure.</p>
+			</div>	
+		</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-8">
+							<button type="submit" class="btn btn-primary">{% firstof submit_btn 'Acknowledge and Create' %}</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+{% endblock %}

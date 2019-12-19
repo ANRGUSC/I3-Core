@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}
+I3 Marketplace | Login
+{%  endblock %}
+
+{% block extra_css %}
+  <!-- Login CSS -->
+  <link rel="stylesheet" href="{% static 'css/login.css' %}"/>
+  <style>
+    body {
+      background-color: #e8e8e8;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="card card-container">
+         <h1 align="center">I3 Marketplace</h1>
+        <img id="profile-img" class="profile-img-card" src="/media/logo/bee_logo.png"/>
+      <p class="text-danger">{{ error }}</p>
+      <form class="form-signin" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <span id="reauth-email" class="reauth-email"></span>
+        <input type="text" name="username" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div id="remember" class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me" id="rememberme"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Login</button>
+      </form><!-- /form -->
+      <div style="text-align: center">
+        <a href="{%  url 'signup' %}">Don't have an account? Sign Up</a>
+      </div>
+      <div style="text-align: center">
+        <a href="https://anrgusc.github.io/iotm/I3_API_Documentation.pdf" target="_blank"}">Reference Documentation</a>
+      </div>
+    </div><!-- /card-container -->
+  </div>
+ <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; I3 Marketplace, University of Southern California 2017.</p>
+          <p>Prototype of the I3 IoT marketplace, pre-release version 0.2, developed by the USC Viterbi Center for Cyber-Physical Systems and the Internet of Things, in collaboration with the USC Viterbi Integrated Media Systems Center and the USC Marshall Institute for Communication Technology Management. November 1, 2018. </p>
+        </div>
+      </div>
+    </div>
+ </footer>
+<br>
+{% endblock %}
+
+{% block jquery %}
+  $("#rememberme").change(function() {
+    window.localStorage.setItem("login__remember_me", this.checked);
+  });
+
+  var r = window.localStorage.getItem("login__remember_me");
+  if ( r === "true" ) {
+    $("#rememberme").prop('checked', true);
+  }
+{% endblock %}

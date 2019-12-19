@@ -1,0 +1,117 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module flows.views</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="flows.html"><font color="#ffffff">flows</font></a>.views</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/erika/Desktop/I3/iotm/frontend/src/flows/views.py">/home/erika/Desktop/I3/iotm/frontend/src/flows/views.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="django.contrib.auth.mixins.html#LoginRequiredMixin">django.contrib.auth.mixins.LoginRequiredMixin</a>(<a href="django.contrib.auth.mixins.html#AccessMixin">django.contrib.auth.mixins.AccessMixin</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="flows.views.html#FlowsView">FlowsView</a>(<a href="django.contrib.auth.mixins.html#LoginRequiredMixin">django.contrib.auth.mixins.LoginRequiredMixin</a>, <a href="django.views.generic.base.html#View">django.views.generic.base.View</a>)
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="django.views.generic.base.html#View">django.views.generic.base.View</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="flows.views.html#FlowsView">FlowsView</a>(<a href="django.contrib.auth.mixins.html#LoginRequiredMixin">django.contrib.auth.mixins.LoginRequiredMixin</a>, <a href="django.views.generic.base.html#View">django.views.generic.base.View</a>)
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="FlowsView">class <strong>FlowsView</strong></a>(<a href="django.contrib.auth.mixins.html#LoginRequiredMixin">django.contrib.auth.mixins.LoginRequiredMixin</a>, <a href="django.views.generic.base.html#View">django.views.generic.base.View</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Displays&nbsp;data&nbsp;related&nbsp;to&nbsp;Flows&nbsp;-&nbsp;if&nbsp;user&nbsp;is&nbsp;staff.<br>
+&nbsp;<br>
+:model:`flows.Flow`<br>
+&nbsp;<br>
+**Context**<br>
+&nbsp;<br>
+:model:`flows.Flow`<br>
+&nbsp;<br>
+``flows``:&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;Flow&nbsp;objects.<br>
+&nbsp;<br>
+**Template**<br>
+&nbsp;<br>
+:template:`dashboard/flows.html`<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="flows.views.html#FlowsView">FlowsView</a></dd>
+<dd><a href="django.contrib.auth.mixins.html#LoginRequiredMixin">django.contrib.auth.mixins.LoginRequiredMixin</a></dd>
+<dd><a href="django.contrib.auth.mixins.html#AccessMixin">django.contrib.auth.mixins.AccessMixin</a></dd>
+<dd><a href="django.views.generic.base.html#View">django.views.generic.base.View</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="FlowsView-get"><strong>get</strong></a>(self, request, *args, **kwargs)</dt><dd><tt>Takes&nbsp;request,&nbsp;renders&nbsp;page.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="django.contrib.auth.mixins.html#LoginRequiredMixin">django.contrib.auth.mixins.LoginRequiredMixin</a>:<br>
+<dl><dt><a name="FlowsView-dispatch"><strong>dispatch</strong></a>(self, request, *args, **kwargs)</dt></dl>
+
+<hr>
+Methods inherited from <a href="django.contrib.auth.mixins.html#AccessMixin">django.contrib.auth.mixins.AccessMixin</a>:<br>
+<dl><dt><a name="FlowsView-get_login_url"><strong>get_login_url</strong></a>(self)</dt><dd><tt>Override&nbsp;this&nbsp;method&nbsp;to&nbsp;override&nbsp;the&nbsp;login_url&nbsp;attribute.</tt></dd></dl>
+
+<dl><dt><a name="FlowsView-get_permission_denied_message"><strong>get_permission_denied_message</strong></a>(self)</dt><dd><tt>Override&nbsp;this&nbsp;method&nbsp;to&nbsp;override&nbsp;the&nbsp;permission_denied_message&nbsp;attribute.</tt></dd></dl>
+
+<dl><dt><a name="FlowsView-get_redirect_field_name"><strong>get_redirect_field_name</strong></a>(self)</dt><dd><tt>Override&nbsp;this&nbsp;method&nbsp;to&nbsp;override&nbsp;the&nbsp;redirect_field_name&nbsp;attribute.</tt></dd></dl>
+
+<dl><dt><a name="FlowsView-handle_no_permission"><strong>handle_no_permission</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="django.contrib.auth.mixins.html#AccessMixin">django.contrib.auth.mixins.AccessMixin</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="django.contrib.auth.mixins.html#AccessMixin">django.contrib.auth.mixins.AccessMixin</a>:<br>
+<dl><dt><strong>login_url</strong> = None</dl>
+
+<dl><dt><strong>permission_denied_message</strong> = ''</dl>
+
+<dl><dt><strong>raise_exception</strong> = False</dl>
+
+<dl><dt><strong>redirect_field_name</strong> = 'next'</dl>
+
+<hr>
+Methods inherited from <a href="django.views.generic.base.html#View">django.views.generic.base.View</a>:<br>
+<dl><dt><a name="FlowsView-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>Constructor.&nbsp;Called&nbsp;in&nbsp;the&nbsp;URLconf;&nbsp;can&nbsp;contain&nbsp;helpful&nbsp;extra<br>
+keyword&nbsp;arguments,&nbsp;and&nbsp;other&nbsp;things.</tt></dd></dl>
+
+<dl><dt><a name="FlowsView-http_method_not_allowed"><strong>http_method_not_allowed</strong></a>(self, request, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="FlowsView-options"><strong>options</strong></a>(self, request, *args, **kwargs)</dt><dd><tt>Handles&nbsp;responding&nbsp;to&nbsp;requests&nbsp;for&nbsp;the&nbsp;OPTIONS&nbsp;HTTP&nbsp;verb.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="django.views.generic.base.html#View">django.views.generic.base.View</a>:<br>
+<dl><dt><a name="FlowsView-as_view"><strong>as_view</strong></a>(cls, **initkwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Main&nbsp;entry&nbsp;point&nbsp;for&nbsp;a&nbsp;request-response&nbsp;process.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="django.views.generic.base.html#View">django.views.generic.base.View</a>:<br>
+<dl><dt><strong>http_method_names</strong> = [u'get', u'post', u'put', u'patch', u'delete', u'head', u'options', u'trace']</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

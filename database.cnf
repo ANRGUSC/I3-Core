@@ -1,0 +1,6 @@
+[client]
+database = iotm
+host = localhost
+user = iotm
+PASSWORD = iotmiotm2017
+default-character-set = utf8

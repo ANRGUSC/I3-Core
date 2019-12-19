@@ -1,0 +1,29 @@
+{% extends "marketplace_base.html" %}
+{% load staticfiles %}
+{% load get_thumbnail %}
+
+{% block title %}
+  I3 Marketplace | Products
+{% endblock %}
+
+{% block page_content %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Products</h1>
+      </div>
+	<div class="h1 col-md-4"> 
+		<a href="{% url 'products:create' %}" class="btn btn-primary">Create a Product</a>
+	</div>
+
+      <div class="col-md-12">
+{#        <div class="row">#}
+          {% include 'products/product_list_snippet.html' with product_list=product_list %}
+{#        </div>#}
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+
+{% endblock %}

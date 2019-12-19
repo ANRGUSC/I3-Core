@@ -1,0 +1,631 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module tags.models</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="tags.html"><font color="#ffffff">tags</font></a>.models</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/erika/Desktop/I3/iotm/frontend/src/tags/models.py">/home/erika/Desktop/I3/iotm/frontend/src/tags/models.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="django.db.models.html">django.db.models</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="django.db.models.base.html#Model">django.db.models.base.Model</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="tags.models.html#Tag">Tag</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="django.db.models.manager.html#Manager">django.db.models.manager.Manager</a>(django.db.models.manager.BaseManagerFromQuerySet)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="tags.models.html#TagManager">TagManager</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="django.db.models.query.html#QuerySet">django.db.models.query.QuerySet</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="tags.models.html#TagQuerySet">TagQuerySet</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Tag">class <strong>Tag</strong></a>(<a href="django.db.models.base.html#Model">django.db.models.base.Model</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Tag">Tag</a>(id,&nbsp;title,&nbsp;slug,&nbsp;active)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="tags.models.html#Tag">Tag</a></dd>
+<dd><a href="django.db.models.base.html#Model">django.db.models.base.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Tag-__unicode__"><strong>__unicode__</strong></a>(self)</dt></dl>
+
+<strong>active</strong> = &lt;django.db.models.query_utils.DeferredAttribute object&gt;
+<dl><dt><a name="Tag-get_absolute_url"><strong>get_absolute_url</strong></a>(self)</dt></dl>
+
+<strong>id</strong> = &lt;django.db.models.query_utils.DeferredAttribute object&gt;
+<strong>objects</strong> = &lt;tags.models.TagManager object&gt;
+<strong>slug</strong> = &lt;django.db.models.query_utils.DeferredAttribute object&gt;
+<strong>title</strong> = &lt;django.db.models.query_utils.DeferredAttribute object&gt;
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>products</strong></dt>
+<dd><tt>Accessor&nbsp;to&nbsp;the&nbsp;related&nbsp;objects&nbsp;manager&nbsp;on&nbsp;the&nbsp;forward&nbsp;and&nbsp;reverse&nbsp;sides&nbsp;of<br>
+a&nbsp;many-to-many&nbsp;relation.<br>
+&nbsp;<br>
+In&nbsp;the&nbsp;example::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;Pizza(Model):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toppings&nbsp;=&nbsp;ManyToManyField(Topping,&nbsp;related_name='pizzas')<br>
+&nbsp;<br>
+``pizza.toppings``&nbsp;and&nbsp;``topping.pizzas``&nbsp;are&nbsp;``ManyToManyDescriptor``<br>
+instances.<br>
+&nbsp;<br>
+Most&nbsp;of&nbsp;the&nbsp;implementation&nbsp;is&nbsp;delegated&nbsp;to&nbsp;a&nbsp;dynamically&nbsp;defined&nbsp;manager<br>
+class&nbsp;built&nbsp;by&nbsp;``create_forward_many_to_many_manager()``&nbsp;defined&nbsp;below.</tt></dd>
+</dl>
+<dl><dt><strong>tagview_set</strong></dt>
+<dd><tt>Accessor&nbsp;to&nbsp;the&nbsp;related&nbsp;objects&nbsp;manager&nbsp;on&nbsp;the&nbsp;reverse&nbsp;side&nbsp;of&nbsp;a<br>
+many-to-one&nbsp;relation.<br>
+&nbsp;<br>
+In&nbsp;the&nbsp;example::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;Child(Model):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent&nbsp;=&nbsp;ForeignKey(Parent,&nbsp;related_name='children')<br>
+&nbsp;<br>
+``parent.children``&nbsp;is&nbsp;a&nbsp;``ReverseManyToOneDescriptor``&nbsp;instance.<br>
+&nbsp;<br>
+Most&nbsp;of&nbsp;the&nbsp;implementation&nbsp;is&nbsp;delegated&nbsp;to&nbsp;a&nbsp;dynamically&nbsp;defined&nbsp;manager<br>
+class&nbsp;built&nbsp;by&nbsp;``create_forward_many_to_many_manager()``&nbsp;defined&nbsp;below.</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>DoesNotExist</strong> = &lt;class 'tags.models.DoesNotExist'&gt;</dl>
+
+<dl><dt><strong>MultipleObjectsReturned</strong> = &lt;class 'tags.models.MultipleObjectsReturned'&gt;</dl>
+
+<hr>
+Methods inherited from <a href="django.db.models.base.html#Model">django.db.models.base.Model</a>:<br>
+<dl><dt><a name="Tag-__eq__"><strong>__eq__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="Tag-__hash__"><strong>__hash__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Tag-__init__"><strong>__init__</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="Tag-__ne__"><strong>__ne__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="Tag-__reduce__"><strong>__reduce__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Tag-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Tag-__setstate__"><strong>__setstate__</strong></a>(self, state)</dt></dl>
+
+<dl><dt><a name="Tag-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Tag-clean"><strong>clean</strong></a>(self)</dt><dd><tt>Hook&nbsp;for&nbsp;doing&nbsp;any&nbsp;extra&nbsp;model-wide&nbsp;validation&nbsp;after&nbsp;<a href="#Tag-clean">clean</a>()&nbsp;has&nbsp;been<br>
+called&nbsp;on&nbsp;every&nbsp;field&nbsp;by&nbsp;self.<strong>clean_fields</strong>.&nbsp;Any&nbsp;ValidationError&nbsp;raised<br>
+by&nbsp;this&nbsp;method&nbsp;will&nbsp;not&nbsp;be&nbsp;associated&nbsp;with&nbsp;a&nbsp;particular&nbsp;field;&nbsp;it&nbsp;will<br>
+have&nbsp;a&nbsp;special-case&nbsp;association&nbsp;with&nbsp;the&nbsp;field&nbsp;defined&nbsp;by&nbsp;NON_FIELD_ERRORS.</tt></dd></dl>
+
+<dl><dt><a name="Tag-clean_fields"><strong>clean_fields</strong></a>(self, exclude<font color="#909090">=None</font>)</dt><dd><tt>Cleans&nbsp;all&nbsp;fields&nbsp;and&nbsp;raises&nbsp;a&nbsp;ValidationError&nbsp;containing&nbsp;a&nbsp;dict<br>
+of&nbsp;all&nbsp;validation&nbsp;errors&nbsp;if&nbsp;any&nbsp;occur.</tt></dd></dl>
+
+<dl><dt><a name="Tag-date_error_message"><strong>date_error_message</strong></a>(self, lookup_type, field_name, unique_for)</dt></dl>
+
+<dl><dt><a name="Tag-delete"><strong>delete</strong></a>(self, using<font color="#909090">=None</font>, keep_parents<font color="#909090">=False</font>)</dt></dl>
+
+<dl><dt><a name="Tag-full_clean"><strong>full_clean</strong></a>(self, exclude<font color="#909090">=None</font>, validate_unique<font color="#909090">=True</font>)</dt><dd><tt>Calls&nbsp;clean_fields,&nbsp;clean,&nbsp;and&nbsp;validate_unique,&nbsp;on&nbsp;the&nbsp;model,<br>
+and&nbsp;raises&nbsp;a&nbsp;``ValidationError``&nbsp;for&nbsp;any&nbsp;errors&nbsp;that&nbsp;occurred.</tt></dd></dl>
+
+<dl><dt><a name="Tag-get_deferred_fields"><strong>get_deferred_fields</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;set&nbsp;containing&nbsp;names&nbsp;of&nbsp;deferred&nbsp;fields&nbsp;for&nbsp;this&nbsp;instance.</tt></dd></dl>
+
+<dl><dt><a name="Tag-prepare_database_save"><strong>prepare_database_save</strong></a>(self, field)</dt></dl>
+
+<dl><dt><a name="Tag-refresh_from_db"><strong>refresh_from_db</strong></a>(self, using<font color="#909090">=None</font>, fields<font color="#909090">=None</font>)</dt><dd><tt>Reloads&nbsp;field&nbsp;values&nbsp;from&nbsp;the&nbsp;database.<br>
+&nbsp;<br>
+By&nbsp;default,&nbsp;the&nbsp;reloading&nbsp;happens&nbsp;from&nbsp;the&nbsp;database&nbsp;this&nbsp;instance&nbsp;was<br>
+loaded&nbsp;from,&nbsp;or&nbsp;by&nbsp;the&nbsp;read&nbsp;router&nbsp;if&nbsp;this&nbsp;instance&nbsp;wasn't&nbsp;loaded&nbsp;from<br>
+any&nbsp;database.&nbsp;The&nbsp;using&nbsp;parameter&nbsp;will&nbsp;override&nbsp;the&nbsp;default.<br>
+&nbsp;<br>
+Fields&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;specify&nbsp;which&nbsp;fields&nbsp;to&nbsp;reload.&nbsp;The&nbsp;fields<br>
+should&nbsp;be&nbsp;an&nbsp;iterable&nbsp;of&nbsp;field&nbsp;attnames.&nbsp;If&nbsp;fields&nbsp;is&nbsp;None,&nbsp;then<br>
+all&nbsp;non-deferred&nbsp;fields&nbsp;are&nbsp;reloaded.<br>
+&nbsp;<br>
+When&nbsp;accessing&nbsp;deferred&nbsp;fields&nbsp;of&nbsp;an&nbsp;instance,&nbsp;the&nbsp;deferred&nbsp;loading<br>
+of&nbsp;the&nbsp;field&nbsp;will&nbsp;call&nbsp;this&nbsp;method.</tt></dd></dl>
+
+<dl><dt><a name="Tag-save"><strong>save</strong></a>(self, force_insert<font color="#909090">=False</font>, force_update<font color="#909090">=False</font>, using<font color="#909090">=None</font>, update_fields<font color="#909090">=None</font>)</dt><dd><tt>Saves&nbsp;the&nbsp;current&nbsp;instance.&nbsp;Override&nbsp;this&nbsp;in&nbsp;a&nbsp;subclass&nbsp;if&nbsp;you&nbsp;want&nbsp;to<br>
+control&nbsp;the&nbsp;saving&nbsp;process.<br>
+&nbsp;<br>
+The&nbsp;'force_insert'&nbsp;and&nbsp;'force_update'&nbsp;parameters&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;insist<br>
+that&nbsp;the&nbsp;"save"&nbsp;must&nbsp;be&nbsp;an&nbsp;SQL&nbsp;insert&nbsp;or&nbsp;update&nbsp;(or&nbsp;equivalent&nbsp;for<br>
+non-SQL&nbsp;backends),&nbsp;respectively.&nbsp;Normally,&nbsp;they&nbsp;should&nbsp;not&nbsp;be&nbsp;set.</tt></dd></dl>
+
+<dl><dt><a name="Tag-save_base"><strong>save_base</strong></a>(self, raw<font color="#909090">=False</font>, force_insert<font color="#909090">=False</font>, force_update<font color="#909090">=False</font>, using<font color="#909090">=None</font>, update_fields<font color="#909090">=None</font>)</dt><dd><tt>Handles&nbsp;the&nbsp;parts&nbsp;of&nbsp;saving&nbsp;which&nbsp;should&nbsp;be&nbsp;done&nbsp;only&nbsp;once&nbsp;per&nbsp;save,<br>
+yet&nbsp;need&nbsp;to&nbsp;be&nbsp;done&nbsp;in&nbsp;raw&nbsp;saves,&nbsp;too.&nbsp;This&nbsp;includes&nbsp;some&nbsp;sanity<br>
+checks&nbsp;and&nbsp;signal&nbsp;sending.<br>
+&nbsp;<br>
+The&nbsp;'raw'&nbsp;argument&nbsp;is&nbsp;telling&nbsp;save_base&nbsp;not&nbsp;to&nbsp;save&nbsp;any&nbsp;parent<br>
+models&nbsp;and&nbsp;not&nbsp;to&nbsp;do&nbsp;any&nbsp;changes&nbsp;to&nbsp;the&nbsp;values&nbsp;before&nbsp;save.&nbsp;This<br>
+is&nbsp;used&nbsp;by&nbsp;fixture&nbsp;loading.</tt></dd></dl>
+
+<dl><dt><a name="Tag-serializable_value"><strong>serializable_value</strong></a>(self, field_name)</dt><dd><tt>Returns&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;field&nbsp;name&nbsp;for&nbsp;this&nbsp;instance.&nbsp;If&nbsp;the&nbsp;field&nbsp;is<br>
+a&nbsp;foreign&nbsp;key,&nbsp;returns&nbsp;the&nbsp;id&nbsp;value,&nbsp;instead&nbsp;of&nbsp;the&nbsp;object.&nbsp;If&nbsp;there's<br>
+no&nbsp;Field&nbsp;object&nbsp;with&nbsp;this&nbsp;name&nbsp;on&nbsp;the&nbsp;model,&nbsp;the&nbsp;model&nbsp;attribute's<br>
+value&nbsp;is&nbsp;returned&nbsp;directly.<br>
+&nbsp;<br>
+Used&nbsp;to&nbsp;serialize&nbsp;a&nbsp;field's&nbsp;value&nbsp;(in&nbsp;the&nbsp;serializer,&nbsp;or&nbsp;form&nbsp;output,<br>
+for&nbsp;example).&nbsp;Normally,&nbsp;you&nbsp;would&nbsp;just&nbsp;access&nbsp;the&nbsp;attribute&nbsp;directly<br>
+and&nbsp;not&nbsp;use&nbsp;this&nbsp;method.</tt></dd></dl>
+
+<dl><dt><a name="Tag-unique_error_message"><strong>unique_error_message</strong></a>(self, model_class, unique_check)</dt></dl>
+
+<dl><dt><a name="Tag-validate_unique"><strong>validate_unique</strong></a>(self, exclude<font color="#909090">=None</font>)</dt><dd><tt>Checks&nbsp;unique&nbsp;constraints&nbsp;on&nbsp;the&nbsp;model&nbsp;and&nbsp;raises&nbsp;``ValidationError``<br>
+if&nbsp;any&nbsp;failed.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="django.db.models.base.html#Model">django.db.models.base.Model</a>:<br>
+<dl><dt><a name="Tag-check"><strong>check</strong></a>(cls, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="django.db.models.base.html#ModelBase">django.db.models.base.ModelBase</a></font></font></dt></dl>
+
+<dl><dt><a name="Tag-from_db"><strong>from_db</strong></a>(cls, db, field_names, values)<font color="#909090"><font face="helvetica, arial"> from <a href="django.db.models.base.html#ModelBase">django.db.models.base.ModelBase</a></font></font></dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="django.db.models.base.html#Model">django.db.models.base.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>pk</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TagManager">class <strong>TagManager</strong></a>(<a href="django.db.models.manager.html#Manager">django.db.models.manager.Manager</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="tags.models.html#TagManager">TagManager</a></dd>
+<dd><a href="django.db.models.manager.html#Manager">django.db.models.manager.Manager</a></dd>
+<dd>django.db.models.manager.BaseManagerFromQuerySet</dd>
+<dd><a href="django.db.models.manager.html#BaseManager">django.db.models.manager.BaseManager</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="TagManager-all"><strong>all</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="TagManager-get_queryset"><strong>get_queryset</strong></a>(self)</dt></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__slotnames__</strong> = []</dl>
+
+<hr>
+Methods inherited from django.db.models.manager.BaseManagerFromQuerySet:<br>
+<dl><dt><a name="TagManager-aggregate"><strong>aggregate</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;dictionary&nbsp;containing&nbsp;the&nbsp;calculations&nbsp;(aggregation)<br>
+over&nbsp;the&nbsp;current&nbsp;queryset<br>
+&nbsp;<br>
+If&nbsp;args&nbsp;is&nbsp;present&nbsp;the&nbsp;expression&nbsp;is&nbsp;passed&nbsp;as&nbsp;a&nbsp;kwarg&nbsp;using<br>
+the&nbsp;Aggregate&nbsp;object's&nbsp;default&nbsp;alias.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-annotate"><strong>annotate</strong></a>(self, *args, **kwargs)</dt><dd><tt>Return&nbsp;a&nbsp;query&nbsp;set&nbsp;in&nbsp;which&nbsp;the&nbsp;returned&nbsp;objects&nbsp;have&nbsp;been&nbsp;annotated<br>
+with&nbsp;extra&nbsp;data&nbsp;or&nbsp;aggregations.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-bulk_create"><strong>bulk_create</strong></a>(self, *args, **kwargs)</dt><dd><tt>Inserts&nbsp;each&nbsp;of&nbsp;the&nbsp;instances&nbsp;into&nbsp;the&nbsp;database.&nbsp;This&nbsp;does&nbsp;*not*&nbsp;call<br>
+save()&nbsp;on&nbsp;each&nbsp;of&nbsp;the&nbsp;instances,&nbsp;does&nbsp;not&nbsp;send&nbsp;any&nbsp;pre/post&nbsp;save<br>
+signals,&nbsp;and&nbsp;does&nbsp;not&nbsp;set&nbsp;the&nbsp;primary&nbsp;key&nbsp;attribute&nbsp;if&nbsp;it&nbsp;is&nbsp;an<br>
+autoincrement&nbsp;field&nbsp;(except&nbsp;if&nbsp;features.can_return_ids_from_bulk_insert=True).<br>
+Multi-table&nbsp;models&nbsp;are&nbsp;not&nbsp;supported.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-complex_filter"><strong>complex_filter</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;instance&nbsp;with&nbsp;filter_obj&nbsp;added&nbsp;to&nbsp;the&nbsp;filters.<br>
+&nbsp;<br>
+filter_obj&nbsp;can&nbsp;be&nbsp;a&nbsp;Q&nbsp;object&nbsp;(or&nbsp;anything&nbsp;with&nbsp;an&nbsp;add_to_query()<br>
+method)&nbsp;or&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;keyword&nbsp;lookup&nbsp;arguments.<br>
+&nbsp;<br>
+This&nbsp;exists&nbsp;to&nbsp;support&nbsp;framework&nbsp;features&nbsp;such&nbsp;as&nbsp;'limit_choices_to',<br>
+and&nbsp;usually&nbsp;it&nbsp;will&nbsp;be&nbsp;more&nbsp;natural&nbsp;to&nbsp;use&nbsp;other&nbsp;methods.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-count"><strong>count</strong></a>(self, *args, **kwargs)</dt><dd><tt>Performs&nbsp;a&nbsp;SELECT&nbsp;COUNT()&nbsp;and&nbsp;returns&nbsp;the&nbsp;number&nbsp;of&nbsp;records&nbsp;as&nbsp;an<br>
+integer.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;is&nbsp;already&nbsp;fully&nbsp;cached&nbsp;this&nbsp;simply&nbsp;returns&nbsp;the&nbsp;length<br>
+of&nbsp;the&nbsp;cached&nbsp;results&nbsp;set&nbsp;to&nbsp;avoid&nbsp;multiple&nbsp;SELECT&nbsp;COUNT(*)&nbsp;calls.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-create"><strong>create</strong></a>(self, *args, **kwargs)</dt><dd><tt>Creates&nbsp;a&nbsp;new&nbsp;object&nbsp;with&nbsp;the&nbsp;given&nbsp;kwargs,&nbsp;saving&nbsp;it&nbsp;to&nbsp;the&nbsp;database<br>
+and&nbsp;returning&nbsp;the&nbsp;created&nbsp;object.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-dates"><strong>dates</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;date&nbsp;objects&nbsp;representing&nbsp;all&nbsp;available&nbsp;dates&nbsp;for<br>
+the&nbsp;given&nbsp;field_name,&nbsp;scoped&nbsp;to&nbsp;'kind'.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-datetimes"><strong>datetimes</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;datetime&nbsp;objects&nbsp;representing&nbsp;all&nbsp;available<br>
+datetimes&nbsp;for&nbsp;the&nbsp;given&nbsp;field_name,&nbsp;scoped&nbsp;to&nbsp;'kind'.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-defer"><strong>defer</strong></a>(self, *args, **kwargs)</dt><dd><tt>Defers&nbsp;the&nbsp;loading&nbsp;of&nbsp;data&nbsp;for&nbsp;certain&nbsp;fields&nbsp;until&nbsp;they&nbsp;are&nbsp;accessed.<br>
+The&nbsp;set&nbsp;of&nbsp;fields&nbsp;to&nbsp;defer&nbsp;is&nbsp;added&nbsp;to&nbsp;any&nbsp;existing&nbsp;set&nbsp;of&nbsp;deferred<br>
+fields.&nbsp;The&nbsp;only&nbsp;exception&nbsp;to&nbsp;this&nbsp;is&nbsp;if&nbsp;None&nbsp;is&nbsp;passed&nbsp;in&nbsp;as&nbsp;the&nbsp;only<br>
+parameter,&nbsp;in&nbsp;which&nbsp;case&nbsp;all&nbsp;deferrals&nbsp;are&nbsp;removed&nbsp;(None&nbsp;acts&nbsp;as&nbsp;a<br>
+reset&nbsp;option).</tt></dd></dl>
+
+<dl><dt><a name="TagManager-difference"><strong>difference</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="TagManager-distinct"><strong>distinct</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;instance&nbsp;that&nbsp;will&nbsp;select&nbsp;only&nbsp;distinct&nbsp;results.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-earliest"><strong>earliest</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="TagManager-exclude"><strong>exclude</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;instance&nbsp;with&nbsp;NOT&nbsp;(args)&nbsp;ANDed&nbsp;to&nbsp;the&nbsp;existing<br>
+set.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-exists"><strong>exists</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="TagManager-extra"><strong>extra</strong></a>(self, *args, **kwargs)</dt><dd><tt>Adds&nbsp;extra&nbsp;SQL&nbsp;fragments&nbsp;to&nbsp;the&nbsp;query.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-filter"><strong>filter</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;instance&nbsp;with&nbsp;the&nbsp;args&nbsp;ANDed&nbsp;to&nbsp;the&nbsp;existing<br>
+set.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-first"><strong>first</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;the&nbsp;first&nbsp;object&nbsp;of&nbsp;a&nbsp;query,&nbsp;returns&nbsp;None&nbsp;if&nbsp;no&nbsp;match&nbsp;is&nbsp;found.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-get"><strong>get</strong></a>(self, *args, **kwargs)</dt><dd><tt>Performs&nbsp;the&nbsp;query&nbsp;and&nbsp;returns&nbsp;a&nbsp;single&nbsp;object&nbsp;matching&nbsp;the&nbsp;given<br>
+keyword&nbsp;arguments.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-get_or_create"><strong>get_or_create</strong></a>(self, *args, **kwargs)</dt><dd><tt>Looks&nbsp;up&nbsp;an&nbsp;object&nbsp;with&nbsp;the&nbsp;given&nbsp;kwargs,&nbsp;creating&nbsp;one&nbsp;if&nbsp;necessary.<br>
+Returns&nbsp;a&nbsp;tuple&nbsp;of&nbsp;(object,&nbsp;created),&nbsp;where&nbsp;created&nbsp;is&nbsp;a&nbsp;boolean<br>
+specifying&nbsp;whether&nbsp;an&nbsp;object&nbsp;was&nbsp;created.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-in_bulk"><strong>in_bulk</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;dictionary&nbsp;mapping&nbsp;each&nbsp;of&nbsp;the&nbsp;given&nbsp;IDs&nbsp;to&nbsp;the&nbsp;object&nbsp;with<br>
+that&nbsp;ID.&nbsp;If&nbsp;`id_list`&nbsp;isn't&nbsp;provided,&nbsp;the&nbsp;entire&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;is&nbsp;evaluated.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-intersection"><strong>intersection</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="TagManager-iterator"><strong>iterator</strong></a>(self, *args, **kwargs)</dt><dd><tt>An&nbsp;iterator&nbsp;over&nbsp;the&nbsp;results&nbsp;from&nbsp;applying&nbsp;this&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;to&nbsp;the<br>
+database.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-last"><strong>last</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;the&nbsp;last&nbsp;object&nbsp;of&nbsp;a&nbsp;query,&nbsp;returns&nbsp;None&nbsp;if&nbsp;no&nbsp;match&nbsp;is&nbsp;found.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-latest"><strong>latest</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="TagManager-none"><strong>none</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;an&nbsp;empty&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-only"><strong>only</strong></a>(self, *args, **kwargs)</dt><dd><tt>Essentially,&nbsp;the&nbsp;opposite&nbsp;of&nbsp;defer.&nbsp;Only&nbsp;the&nbsp;fields&nbsp;passed&nbsp;into&nbsp;this<br>
+method&nbsp;and&nbsp;that&nbsp;are&nbsp;not&nbsp;already&nbsp;specified&nbsp;as&nbsp;deferred&nbsp;are&nbsp;loaded<br>
+immediately&nbsp;when&nbsp;the&nbsp;queryset&nbsp;is&nbsp;evaluated.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-order_by"><strong>order_by</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;instance&nbsp;with&nbsp;the&nbsp;ordering&nbsp;changed.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-prefetch_related"><strong>prefetch_related</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;instance&nbsp;that&nbsp;will&nbsp;prefetch&nbsp;the&nbsp;specified<br>
+Many-To-One&nbsp;and&nbsp;Many-To-Many&nbsp;related&nbsp;objects&nbsp;when&nbsp;the&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;is<br>
+evaluated.<br>
+&nbsp;<br>
+When&nbsp;<a href="#TagManager-prefetch_related">prefetch_related</a>()&nbsp;is&nbsp;called&nbsp;more&nbsp;than&nbsp;once,&nbsp;the&nbsp;list&nbsp;of&nbsp;lookups&nbsp;to<br>
+prefetch&nbsp;is&nbsp;appended&nbsp;to.&nbsp;If&nbsp;<a href="#TagManager-prefetch_related">prefetch_related</a>(None)&nbsp;is&nbsp;called,&nbsp;the&nbsp;list<br>
+is&nbsp;cleared.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-raw"><strong>raw</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="TagManager-reverse"><strong>reverse</strong></a>(self, *args, **kwargs)</dt><dd><tt>Reverses&nbsp;the&nbsp;ordering&nbsp;of&nbsp;the&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-select_for_update"><strong>select_for_update</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;instance&nbsp;that&nbsp;will&nbsp;select&nbsp;objects&nbsp;with&nbsp;a<br>
+FOR&nbsp;UPDATE&nbsp;lock.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-select_related"><strong>select_related</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;instance&nbsp;that&nbsp;will&nbsp;select&nbsp;related&nbsp;objects.<br>
+&nbsp;<br>
+If&nbsp;fields&nbsp;are&nbsp;specified,&nbsp;they&nbsp;must&nbsp;be&nbsp;ForeignKey&nbsp;fields&nbsp;and&nbsp;only&nbsp;those<br>
+related&nbsp;objects&nbsp;are&nbsp;included&nbsp;in&nbsp;the&nbsp;selection.<br>
+&nbsp;<br>
+If&nbsp;<a href="#TagManager-select_related">select_related</a>(None)&nbsp;is&nbsp;called,&nbsp;the&nbsp;list&nbsp;is&nbsp;cleared.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-union"><strong>union</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="TagManager-update"><strong>update</strong></a>(self, *args, **kwargs)</dt><dd><tt>Updates&nbsp;all&nbsp;elements&nbsp;in&nbsp;the&nbsp;current&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>,&nbsp;setting&nbsp;all&nbsp;the&nbsp;given<br>
+fields&nbsp;to&nbsp;the&nbsp;appropriate&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-update_or_create"><strong>update_or_create</strong></a>(self, *args, **kwargs)</dt><dd><tt>Looks&nbsp;up&nbsp;an&nbsp;object&nbsp;with&nbsp;the&nbsp;given&nbsp;kwargs,&nbsp;updating&nbsp;one&nbsp;with&nbsp;defaults<br>
+if&nbsp;it&nbsp;exists,&nbsp;otherwise&nbsp;creates&nbsp;a&nbsp;new&nbsp;one.<br>
+Returns&nbsp;a&nbsp;tuple&nbsp;(object,&nbsp;created),&nbsp;where&nbsp;created&nbsp;is&nbsp;a&nbsp;boolean<br>
+specifying&nbsp;whether&nbsp;an&nbsp;object&nbsp;was&nbsp;created.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-using"><strong>using</strong></a>(self, *args, **kwargs)</dt><dd><tt>Selects&nbsp;which&nbsp;database&nbsp;this&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;should&nbsp;execute&nbsp;its&nbsp;query&nbsp;against.</tt></dd></dl>
+
+<dl><dt><a name="TagManager-values"><strong>values</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="TagManager-values_list"><strong>values_list</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<hr>
+Methods inherited from <a href="django.db.models.manager.html#BaseManager">django.db.models.manager.BaseManager</a>:<br>
+<dl><dt><a name="TagManager-__eq__"><strong>__eq__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="TagManager-__hash__"><strong>__hash__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="TagManager-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="TagManager-__ne__"><strong>__ne__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><strong>__str__</strong> <em>lambda</em> self</dt></dl>
+
+<dl><dt><a name="TagManager-__unicode__"><strong>__unicode__</strong></a> = __str__(self)</dt><dd><tt>Return&nbsp;"app_label.model_label.manager_name".</tt></dd></dl>
+
+<dl><dt><a name="TagManager-check"><strong>check</strong></a>(self, **kwargs)</dt></dl>
+
+<dl><dt><a name="TagManager-contribute_to_class"><strong>contribute_to_class</strong></a>(self, model, name)</dt></dl>
+
+<dl><dt><a name="TagManager-db_manager"><strong>db_manager</strong></a>(self, using<font color="#909090">=None</font>, hints<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="TagManager-deconstruct"><strong>deconstruct</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;5-tuple&nbsp;of&nbsp;the&nbsp;form&nbsp;(as_manager&nbsp;(True),&nbsp;manager_class,<br>
+queryset_class,&nbsp;args,&nbsp;kwargs).<br>
+&nbsp;<br>
+Raises&nbsp;a&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;manager&nbsp;is&nbsp;dynamically&nbsp;generated.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="django.db.models.manager.html#BaseManager">django.db.models.manager.BaseManager</a>:<br>
+<dl><dt><a name="TagManager-from_queryset"><strong>from_queryset</strong></a>(cls, queryset_class, class_name<font color="#909090">=None</font>)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<hr>
+Static methods inherited from <a href="django.db.models.manager.html#BaseManager">django.db.models.manager.BaseManager</a>:<br>
+<dl><dt><a name="TagManager-__new__"><strong>__new__</strong></a>(cls, *args, **kwargs)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="django.db.models.manager.html#BaseManager">django.db.models.manager.BaseManager</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>db</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="django.db.models.manager.html#BaseManager">django.db.models.manager.BaseManager</a>:<br>
+<dl><dt><strong>auto_created</strong> = False</dl>
+
+<dl><dt><strong>creation_counter</strong> = 31</dl>
+
+<dl><dt><strong>use_in_migrations</strong> = False</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TagQuerySet">class <strong>TagQuerySet</strong></a>(<a href="django.db.models.query.html#QuerySet">django.db.models.query.QuerySet</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="tags.models.html#TagQuerySet">TagQuerySet</a></dd>
+<dd><a href="django.db.models.query.html#QuerySet">django.db.models.query.QuerySet</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="TagQuerySet-active"><strong>active</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="django.db.models.query.html#QuerySet">django.db.models.query.QuerySet</a>:<br>
+<dl><dt><a name="TagQuerySet-__and__"><strong>__and__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-__bool__"><strong>__bool__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-__deepcopy__"><strong>__deepcopy__</strong></a>(self, memo)</dt><dd><tt>Deep&nbsp;copy&nbsp;of&nbsp;a&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;doesn't&nbsp;populate&nbsp;the&nbsp;cache</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-__getitem__"><strong>__getitem__</strong></a>(self, k)</dt><dd><tt>Retrieves&nbsp;an&nbsp;item&nbsp;or&nbsp;slice&nbsp;from&nbsp;the&nbsp;set&nbsp;of&nbsp;results.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-__getstate__"><strong>__getstate__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-__init__"><strong>__init__</strong></a>(self, model<font color="#909090">=None</font>, query<font color="#909090">=None</font>, using<font color="#909090">=None</font>, hints<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-__iter__"><strong>__iter__</strong></a>(self)</dt><dd><tt>The&nbsp;queryset&nbsp;iterator&nbsp;protocol&nbsp;uses&nbsp;three&nbsp;nested&nbsp;iterators&nbsp;in&nbsp;the<br>
+default&nbsp;case:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;sql.compiler:execute_sql()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Returns&nbsp;100&nbsp;rows&nbsp;at&nbsp;time&nbsp;(constants.GET_ITERATOR_CHUNK_SIZE)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;using&nbsp;cursor.fetchmany().&nbsp;This&nbsp;part&nbsp;is&nbsp;responsible&nbsp;for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doing&nbsp;some&nbsp;column&nbsp;masking,&nbsp;and&nbsp;returning&nbsp;the&nbsp;rows&nbsp;in&nbsp;chunks.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;sql/compiler.results_iter()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Returns&nbsp;one&nbsp;row&nbsp;at&nbsp;time.&nbsp;At&nbsp;this&nbsp;point&nbsp;the&nbsp;rows&nbsp;are&nbsp;still&nbsp;just<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tuples.&nbsp;In&nbsp;some&nbsp;cases&nbsp;the&nbsp;return&nbsp;values&nbsp;are&nbsp;converted&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Python&nbsp;values&nbsp;at&nbsp;this&nbsp;location.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;self.<a href="#TagQuerySet-iterator">iterator</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Responsible&nbsp;for&nbsp;turning&nbsp;the&nbsp;rows&nbsp;into&nbsp;model&nbsp;objects.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-__len__"><strong>__len__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-__nonzero__"><strong>__nonzero__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-__or__"><strong>__or__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-__setstate__"><strong>__setstate__</strong></a>(self, state)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-aggregate"><strong>aggregate</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;dictionary&nbsp;containing&nbsp;the&nbsp;calculations&nbsp;(aggregation)<br>
+over&nbsp;the&nbsp;current&nbsp;queryset<br>
+&nbsp;<br>
+If&nbsp;args&nbsp;is&nbsp;present&nbsp;the&nbsp;expression&nbsp;is&nbsp;passed&nbsp;as&nbsp;a&nbsp;kwarg&nbsp;using<br>
+the&nbsp;Aggregate&nbsp;object's&nbsp;default&nbsp;alias.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-all"><strong>all</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;that&nbsp;is&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;current&nbsp;one.&nbsp;This&nbsp;allows&nbsp;a<br>
+<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;to&nbsp;proxy&nbsp;for&nbsp;a&nbsp;model&nbsp;manager&nbsp;in&nbsp;some&nbsp;cases.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-annotate"><strong>annotate</strong></a>(self, *args, **kwargs)</dt><dd><tt>Return&nbsp;a&nbsp;query&nbsp;set&nbsp;in&nbsp;which&nbsp;the&nbsp;returned&nbsp;objects&nbsp;have&nbsp;been&nbsp;annotated<br>
+with&nbsp;extra&nbsp;data&nbsp;or&nbsp;aggregations.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-bulk_create"><strong>bulk_create</strong></a>(self, objs, batch_size<font color="#909090">=None</font>)</dt><dd><tt>Inserts&nbsp;each&nbsp;of&nbsp;the&nbsp;instances&nbsp;into&nbsp;the&nbsp;database.&nbsp;This&nbsp;does&nbsp;*not*&nbsp;call<br>
+save()&nbsp;on&nbsp;each&nbsp;of&nbsp;the&nbsp;instances,&nbsp;does&nbsp;not&nbsp;send&nbsp;any&nbsp;pre/post&nbsp;save<br>
+signals,&nbsp;and&nbsp;does&nbsp;not&nbsp;set&nbsp;the&nbsp;primary&nbsp;key&nbsp;attribute&nbsp;if&nbsp;it&nbsp;is&nbsp;an<br>
+autoincrement&nbsp;field&nbsp;(except&nbsp;if&nbsp;features.can_return_ids_from_bulk_insert=True).<br>
+Multi-table&nbsp;models&nbsp;are&nbsp;not&nbsp;supported.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-complex_filter"><strong>complex_filter</strong></a>(self, filter_obj)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;instance&nbsp;with&nbsp;filter_obj&nbsp;added&nbsp;to&nbsp;the&nbsp;filters.<br>
+&nbsp;<br>
+filter_obj&nbsp;can&nbsp;be&nbsp;a&nbsp;Q&nbsp;object&nbsp;(or&nbsp;anything&nbsp;with&nbsp;an&nbsp;add_to_query()<br>
+method)&nbsp;or&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;keyword&nbsp;lookup&nbsp;arguments.<br>
+&nbsp;<br>
+This&nbsp;exists&nbsp;to&nbsp;support&nbsp;framework&nbsp;features&nbsp;such&nbsp;as&nbsp;'limit_choices_to',<br>
+and&nbsp;usually&nbsp;it&nbsp;will&nbsp;be&nbsp;more&nbsp;natural&nbsp;to&nbsp;use&nbsp;other&nbsp;methods.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-count"><strong>count</strong></a>(self)</dt><dd><tt>Performs&nbsp;a&nbsp;SELECT&nbsp;COUNT()&nbsp;and&nbsp;returns&nbsp;the&nbsp;number&nbsp;of&nbsp;records&nbsp;as&nbsp;an<br>
+integer.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;is&nbsp;already&nbsp;fully&nbsp;cached&nbsp;this&nbsp;simply&nbsp;returns&nbsp;the&nbsp;length<br>
+of&nbsp;the&nbsp;cached&nbsp;results&nbsp;set&nbsp;to&nbsp;avoid&nbsp;multiple&nbsp;SELECT&nbsp;COUNT(*)&nbsp;calls.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-create"><strong>create</strong></a>(self, **kwargs)</dt><dd><tt>Creates&nbsp;a&nbsp;new&nbsp;object&nbsp;with&nbsp;the&nbsp;given&nbsp;kwargs,&nbsp;saving&nbsp;it&nbsp;to&nbsp;the&nbsp;database<br>
+and&nbsp;returning&nbsp;the&nbsp;created&nbsp;object.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-dates"><strong>dates</strong></a>(self, field_name, kind, order<font color="#909090">='ASC'</font>)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;date&nbsp;objects&nbsp;representing&nbsp;all&nbsp;available&nbsp;dates&nbsp;for<br>
+the&nbsp;given&nbsp;field_name,&nbsp;scoped&nbsp;to&nbsp;'kind'.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-datetimes"><strong>datetimes</strong></a>(self, field_name, kind, order<font color="#909090">='ASC'</font>, tzinfo<font color="#909090">=None</font>)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;datetime&nbsp;objects&nbsp;representing&nbsp;all&nbsp;available<br>
+datetimes&nbsp;for&nbsp;the&nbsp;given&nbsp;field_name,&nbsp;scoped&nbsp;to&nbsp;'kind'.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-defer"><strong>defer</strong></a>(self, *fields)</dt><dd><tt>Defers&nbsp;the&nbsp;loading&nbsp;of&nbsp;data&nbsp;for&nbsp;certain&nbsp;fields&nbsp;until&nbsp;they&nbsp;are&nbsp;accessed.<br>
+The&nbsp;set&nbsp;of&nbsp;fields&nbsp;to&nbsp;defer&nbsp;is&nbsp;added&nbsp;to&nbsp;any&nbsp;existing&nbsp;set&nbsp;of&nbsp;deferred<br>
+fields.&nbsp;The&nbsp;only&nbsp;exception&nbsp;to&nbsp;this&nbsp;is&nbsp;if&nbsp;None&nbsp;is&nbsp;passed&nbsp;in&nbsp;as&nbsp;the&nbsp;only<br>
+parameter,&nbsp;in&nbsp;which&nbsp;case&nbsp;all&nbsp;deferrals&nbsp;are&nbsp;removed&nbsp;(None&nbsp;acts&nbsp;as&nbsp;a<br>
+reset&nbsp;option).</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-delete"><strong>delete</strong></a>(self)</dt><dd><tt>Deletes&nbsp;the&nbsp;records&nbsp;in&nbsp;the&nbsp;current&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-difference"><strong>difference</strong></a>(self, *other_qs)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-distinct"><strong>distinct</strong></a>(self, *field_names)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;instance&nbsp;that&nbsp;will&nbsp;select&nbsp;only&nbsp;distinct&nbsp;results.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-earliest"><strong>earliest</strong></a>(self, field_name<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-exclude"><strong>exclude</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;instance&nbsp;with&nbsp;NOT&nbsp;(args)&nbsp;ANDed&nbsp;to&nbsp;the&nbsp;existing<br>
+set.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-exists"><strong>exists</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-extra"><strong>extra</strong></a>(self, select<font color="#909090">=None</font>, where<font color="#909090">=None</font>, params<font color="#909090">=None</font>, tables<font color="#909090">=None</font>, order_by<font color="#909090">=None</font>, select_params<font color="#909090">=None</font>)</dt><dd><tt>Adds&nbsp;extra&nbsp;SQL&nbsp;fragments&nbsp;to&nbsp;the&nbsp;query.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-filter"><strong>filter</strong></a>(self, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;instance&nbsp;with&nbsp;the&nbsp;args&nbsp;ANDed&nbsp;to&nbsp;the&nbsp;existing<br>
+set.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-first"><strong>first</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;first&nbsp;object&nbsp;of&nbsp;a&nbsp;query,&nbsp;returns&nbsp;None&nbsp;if&nbsp;no&nbsp;match&nbsp;is&nbsp;found.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-get"><strong>get</strong></a>(self, *args, **kwargs)</dt><dd><tt>Performs&nbsp;the&nbsp;query&nbsp;and&nbsp;returns&nbsp;a&nbsp;single&nbsp;object&nbsp;matching&nbsp;the&nbsp;given<br>
+keyword&nbsp;arguments.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-get_or_create"><strong>get_or_create</strong></a>(self, defaults<font color="#909090">=None</font>, **kwargs)</dt><dd><tt>Looks&nbsp;up&nbsp;an&nbsp;object&nbsp;with&nbsp;the&nbsp;given&nbsp;kwargs,&nbsp;creating&nbsp;one&nbsp;if&nbsp;necessary.<br>
+Returns&nbsp;a&nbsp;tuple&nbsp;of&nbsp;(object,&nbsp;created),&nbsp;where&nbsp;created&nbsp;is&nbsp;a&nbsp;boolean<br>
+specifying&nbsp;whether&nbsp;an&nbsp;object&nbsp;was&nbsp;created.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-in_bulk"><strong>in_bulk</strong></a>(self, id_list<font color="#909090">=None</font>)</dt><dd><tt>Returns&nbsp;a&nbsp;dictionary&nbsp;mapping&nbsp;each&nbsp;of&nbsp;the&nbsp;given&nbsp;IDs&nbsp;to&nbsp;the&nbsp;object&nbsp;with<br>
+that&nbsp;ID.&nbsp;If&nbsp;`id_list`&nbsp;isn't&nbsp;provided,&nbsp;the&nbsp;entire&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;is&nbsp;evaluated.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-intersection"><strong>intersection</strong></a>(self, *other_qs)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-iterator"><strong>iterator</strong></a>(self)</dt><dd><tt>An&nbsp;iterator&nbsp;over&nbsp;the&nbsp;results&nbsp;from&nbsp;applying&nbsp;this&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;to&nbsp;the<br>
+database.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-last"><strong>last</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;last&nbsp;object&nbsp;of&nbsp;a&nbsp;query,&nbsp;returns&nbsp;None&nbsp;if&nbsp;no&nbsp;match&nbsp;is&nbsp;found.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-latest"><strong>latest</strong></a>(self, field_name<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-none"><strong>none</strong></a>(self)</dt><dd><tt>Returns&nbsp;an&nbsp;empty&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-only"><strong>only</strong></a>(self, *fields)</dt><dd><tt>Essentially,&nbsp;the&nbsp;opposite&nbsp;of&nbsp;defer.&nbsp;Only&nbsp;the&nbsp;fields&nbsp;passed&nbsp;into&nbsp;this<br>
+method&nbsp;and&nbsp;that&nbsp;are&nbsp;not&nbsp;already&nbsp;specified&nbsp;as&nbsp;deferred&nbsp;are&nbsp;loaded<br>
+immediately&nbsp;when&nbsp;the&nbsp;queryset&nbsp;is&nbsp;evaluated.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-order_by"><strong>order_by</strong></a>(self, *field_names)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;instance&nbsp;with&nbsp;the&nbsp;ordering&nbsp;changed.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-prefetch_related"><strong>prefetch_related</strong></a>(self, *lookups)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;instance&nbsp;that&nbsp;will&nbsp;prefetch&nbsp;the&nbsp;specified<br>
+Many-To-One&nbsp;and&nbsp;Many-To-Many&nbsp;related&nbsp;objects&nbsp;when&nbsp;the&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;is<br>
+evaluated.<br>
+&nbsp;<br>
+When&nbsp;<a href="#TagQuerySet-prefetch_related">prefetch_related</a>()&nbsp;is&nbsp;called&nbsp;more&nbsp;than&nbsp;once,&nbsp;the&nbsp;list&nbsp;of&nbsp;lookups&nbsp;to<br>
+prefetch&nbsp;is&nbsp;appended&nbsp;to.&nbsp;If&nbsp;<a href="#TagQuerySet-prefetch_related">prefetch_related</a>(None)&nbsp;is&nbsp;called,&nbsp;the&nbsp;list<br>
+is&nbsp;cleared.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-raw"><strong>raw</strong></a>(self, raw_query, params<font color="#909090">=None</font>, translations<font color="#909090">=None</font>, using<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-reverse"><strong>reverse</strong></a>(self)</dt><dd><tt>Reverses&nbsp;the&nbsp;ordering&nbsp;of&nbsp;the&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-select_for_update"><strong>select_for_update</strong></a>(self, nowait<font color="#909090">=False</font>, skip_locked<font color="#909090">=False</font>)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;instance&nbsp;that&nbsp;will&nbsp;select&nbsp;objects&nbsp;with&nbsp;a<br>
+FOR&nbsp;UPDATE&nbsp;lock.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-select_related"><strong>select_related</strong></a>(self, *fields)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;instance&nbsp;that&nbsp;will&nbsp;select&nbsp;related&nbsp;objects.<br>
+&nbsp;<br>
+If&nbsp;fields&nbsp;are&nbsp;specified,&nbsp;they&nbsp;must&nbsp;be&nbsp;ForeignKey&nbsp;fields&nbsp;and&nbsp;only&nbsp;those<br>
+related&nbsp;objects&nbsp;are&nbsp;included&nbsp;in&nbsp;the&nbsp;selection.<br>
+&nbsp;<br>
+If&nbsp;<a href="#TagQuerySet-select_related">select_related</a>(None)&nbsp;is&nbsp;called,&nbsp;the&nbsp;list&nbsp;is&nbsp;cleared.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-union"><strong>union</strong></a>(self, *other_qs, **kwargs)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-update"><strong>update</strong></a>(self, **kwargs)</dt><dd><tt>Updates&nbsp;all&nbsp;elements&nbsp;in&nbsp;the&nbsp;current&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>,&nbsp;setting&nbsp;all&nbsp;the&nbsp;given<br>
+fields&nbsp;to&nbsp;the&nbsp;appropriate&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-update_or_create"><strong>update_or_create</strong></a>(self, defaults<font color="#909090">=None</font>, **kwargs)</dt><dd><tt>Looks&nbsp;up&nbsp;an&nbsp;object&nbsp;with&nbsp;the&nbsp;given&nbsp;kwargs,&nbsp;updating&nbsp;one&nbsp;with&nbsp;defaults<br>
+if&nbsp;it&nbsp;exists,&nbsp;otherwise&nbsp;creates&nbsp;a&nbsp;new&nbsp;one.<br>
+Returns&nbsp;a&nbsp;tuple&nbsp;(object,&nbsp;created),&nbsp;where&nbsp;created&nbsp;is&nbsp;a&nbsp;boolean<br>
+specifying&nbsp;whether&nbsp;an&nbsp;object&nbsp;was&nbsp;created.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-using"><strong>using</strong></a>(self, alias)</dt><dd><tt>Selects&nbsp;which&nbsp;database&nbsp;this&nbsp;<a href="django.db.models.query.html#QuerySet">QuerySet</a>&nbsp;should&nbsp;execute&nbsp;its&nbsp;query&nbsp;against.</tt></dd></dl>
+
+<dl><dt><a name="TagQuerySet-values"><strong>values</strong></a>(self, *fields, **expressions)</dt></dl>
+
+<dl><dt><a name="TagQuerySet-values_list"><strong>values_list</strong></a>(self, *fields, **kwargs)</dt></dl>
+
+<hr>
+Class methods inherited from <a href="django.db.models.query.html#QuerySet">django.db.models.query.QuerySet</a>:<br>
+<dl><dt><a name="TagQuerySet-as_manager"><strong>as_manager</strong></a>(cls)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="django.db.models.query.html#QuerySet">django.db.models.query.QuerySet</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>db</strong></dt>
+<dd><tt>Return&nbsp;the&nbsp;database&nbsp;that&nbsp;will&nbsp;be&nbsp;used&nbsp;if&nbsp;this&nbsp;query&nbsp;is&nbsp;executed&nbsp;now</tt></dd>
+</dl>
+<dl><dt><strong>ordered</strong></dt>
+<dd><tt>Returns&nbsp;True&nbsp;if&nbsp;the&nbsp;QuerySet&nbsp;is&nbsp;ordered&nbsp;--&nbsp;i.e.&nbsp;has&nbsp;an&nbsp;order_by()<br>
+clause&nbsp;or&nbsp;a&nbsp;default&nbsp;ordering&nbsp;on&nbsp;the&nbsp;model.</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-tag_pre_save_receiver"><strong>tag_pre_save_receiver</strong></a>(sender, instance, *args, **kwargs)</dt></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>post_save</strong> = &lt;django.db.models.signals.ModelSignal object&gt;<br>
+<strong>pre_save</strong> = &lt;django.db.models.signals.ModelSignal object&gt;</td></tr></table>
+</body></html>

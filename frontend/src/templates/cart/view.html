@@ -1,0 +1,63 @@
+{% extends 'marketplace_base.html' %}
+{% load static %}
+
+{% block title %}I3 Marketplace | Cart{% endblock %}
+
+{% block page_content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <h3>My Cart</h3>
+        <form name="checkout">
+          {% csrf_token %}
+          <table class="table table-striped cart">
+            <thead>
+            <tr>
+              <th>Product</th>
+              <th style="width: 200px;">Message</th>
+              <th style="width: 100px;">Price</th>
+              <th style="width: 100px;">Quantity</th>
+              <th style="width: 100px;">Total</th>
+              <th style="width: 100px;"></th>
+            </tr>
+            </thead>
+            {% for item in cart.all_items %}
+              <tr>
+                <td><a href="{% url 'products:detail' item.product.id %}">{{ item.product }}</a></td>
+                <td>{% firstof item.intention|truncatechars:80 '<em>No message provided.</em>' %}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.quantity }}</td>
+                <td class="price">{{ item.total_price }}</td>
+                <td>
+                  <button class="btn btn-sm btn-danger" data-id="{{ item.id }}">
+                    <span class="glyphicon glyphicon-trash"></span>
+                  </button>
+                </td>
+              </tr>
+            {% empty %}
+              <tr>
+                <td colspan="6"><span style="font-style: italic;">Your cart is empty.</span></td>
+              </tr>
+            {% endfor %}
+            {% if cart.num_items > 0 %}
+              <tfoot>
+              <tr>
+                <td colspan="3"></td>
+                <td></td>
+                <td id="total_price">{{ cart.total_price }}</td>
+                <td>
+                  <button class="btn btn-info" type="submit">Checkout</button>
+                </td>
+              </tr>
+              </tfoot>
+            {% endif %}
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block extra_js %}
+  <script src="{% static 'js/cart.js' %}"></script>
+{% endblock %}

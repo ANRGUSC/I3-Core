@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}
+I3 Marketplace | Login
+{%  endblock %}
+
+{% block extra_css %}
+  <!-- Login CSS -->
+  <link rel="stylesheet" href="{% static 'css/login.css' %}"/>
+  <style>
+    body {
+      background-color: #e8e8e8;
+    }
+    div.card.card-container {
+      width: 80% !important;
+      max-width: none;
+    }
+    div.card.card-container form {
+
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="card card-container">
+         <h1 align="center">I3 Marketplace</h1>
+        <img id="profile-img" class="profile-img-card" src="/media/logo/bee_logo.png"/>
+      <p class="text-danger">{{ error }}</p>
+      <form method="POST" action="" enctype='multipart/form-data'>
+      <h1>Sign Up</h1>
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-sm-8">
+          {{ form.errors }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="form-group">
+            <label for="{{ form.username.id_for_label }}">Username</label>
+            {{ form.username }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Email</label>
+            {{ form.email }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+         <div class="form-group">
+            <label for="{{ form.password.id_for_label }}">Password</label>
+            {{ form.password }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="form-group">
+            <label for="{{ form.verify_password.id_for_label }}">Verify Password</label>
+            {{ form.verify_password }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <button type="submit" class="btn btn-primary pull-right">{% firstof submit_btn 'Sign Up' %}</button>
+        </div>
+      </div>
+    </form>
+    </div><!-- /card-container -->
+  </div>
+ <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; I3 Marketplace, University of Southern California 2017.</p>
+          <p>Prototype of the I3 IoT marketplace, pre-release version 0.2, developed by the USC Viterbi Center for Cyber-Physical Systems and the Internet of Things, in collaboration with the USC Viterbi Integrated Media Systems Center and the USC Marshall Institute for Communication Technology Management. April 24, 2017. </p>
+        </div>
+      </div>
+    </div>
+ </footer>
+<br>
+{% endblock %}
+
+{% block jquery %}
+  $("#rememberme").change(function() {
+    window.localStorage.setItem("login__remember_me", this.checked);
+  });
+
+  var r = window.localStorage.getItem("login__remember_me");
+  if ( r === "true" ) {
+    $("#rememberme").prop('checked', true);
+  }
+{% endblock %}
+

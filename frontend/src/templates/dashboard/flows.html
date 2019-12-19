@@ -1,0 +1,66 @@
+{% extends 'marketplace_base.html' %}
+
+{% block title %}I3 Marketplace | Flows{% endblock %}
+
+{% block extra_css %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/datatables.min.css"/>
+{% endblock %}
+
+{% block page_content %}
+  <div class="container">
+    <h2>Flows</h2>
+    {%  if flows %}
+
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+              <h3>Sales</h3>
+              <table class="table">
+                <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Topic</th>
+                  <th>Direction</th>
+                  <th>State</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for flow in flows %}
+                  {% if flow.state == "publishing" %}
+                    <tr bgcolor='#bff442'>
+                  {% elif flow.state == "subscribing" %}
+                    <tr bgcolor='#41c4f4'>
+                  {% elif flow.state == "done" %}
+                    <tr bgcolor='#f44141'>
+                  {% else %}
+                    <tr>
+                  {% endif %}
+                    <td>{{ flow.user }}</td>
+                    <td>{{ flow.topic }}</td>
+                    <td>{{ flow.direction }}</td>
+                    <td>{{ flow.state }}</td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+    {% endif %}
+
+  </div>
+{% endblock %}
+
+{% block extra_js %}
+  {{ block.super }}
+  <script type="text/javascript"
+          src="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/datatables.min.js"></script>
+
+  <script  type="text/javascript">
+    $(document).ready(function () {
+       $('table.table').each(function() {
+           $(this).DataTable();
+       })
+    });
+  </script>
+{% endblock %}

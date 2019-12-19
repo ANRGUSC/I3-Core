@@ -1,0 +1,42 @@
+{% extends "marketplace_base.html" %}
+{% load staticfiles %}
+{% load get_thumbnail %}
+
+{% block title %}I3 Marketplace | Product | {{ object.title }}{% endblock %}
+
+{% block page_content %}
+<div class="container">
+  <h1>API Key</h1>
+  <small>This is your API key. It grants full access to your account. Do not share your key. </small>
+  <hr>
+  <a href="/docs">Click here for API documentation</a>
+  <div class="row">
+    <div class="col-sm-2">
+      API Key
+    </div>
+    <div class="col-sm-7">
+      <div class="input-group">
+        <input id="foo" value="{{ key }}" class="form-control">
+        <!-- Trigger -->
+        <div class="input-group-btn">
+          <button class="btn btn-default" data-clipboard-target="#foo">
+            <i class="material-icons" style="font-size:15px">
+              file_copy
+            </i>
+          </font>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+  </div>
+</div>
+<hr>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+<script>
+  new ClipboardJS('.btn');
+</script>
+{% endblock %}

@@ -1,0 +1,183 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module accounts.forms</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="accounts.html"><font color="#ffffff">accounts</font></a>.forms</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/erika/Desktop/I3/iotm/frontend/src/accounts/forms.py">/home/erika/Desktop/I3/iotm/frontend/src/accounts/forms.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="django.forms.html">django.forms</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="django.forms.forms.html#Form">django.forms.forms.Form</a>(<a href="django.forms.forms.html#BaseForm">django.forms.forms.BaseForm</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="accounts.forms.html#RegistrationForm">RegistrationForm</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RegistrationForm">class <strong>RegistrationForm</strong></a>(<a href="django.forms.forms.html#Form">django.forms.forms.Form</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="accounts.forms.html#RegistrationForm">RegistrationForm</a></dd>
+<dd><a href="django.forms.forms.html#Form">django.forms.forms.Form</a></dd>
+<dd><a href="django.forms.forms.html#BaseForm">django.forms.forms.BaseForm</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="RegistrationForm-clean_password2"><strong>clean_password2</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RegistrationForm-clean_username"><strong>clean_username</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>media</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>base_fields</strong> = OrderedDict([('username', &lt;django.forms.fields.C...rms.fields.CharField object at 0x7f118006f050&gt;)])</dl>
+
+<dl><dt><strong>declared_fields</strong> = OrderedDict([('username', &lt;django.forms.fields.C...rms.fields.CharField object at 0x7f118006f050&gt;)])</dl>
+
+<hr>
+Methods inherited from <a href="django.forms.forms.html#BaseForm">django.forms.forms.BaseForm</a>:<br>
+<dl><dt><a name="RegistrationForm-__getitem__"><strong>__getitem__</strong></a>(self, name)</dt><dd><tt>Returns&nbsp;a&nbsp;BoundField&nbsp;with&nbsp;the&nbsp;given&nbsp;name.</tt></dd></dl>
+
+<dl><dt><strong>__html__</strong> <em>lambda</em> self</dt></dl>
+
+<dl><dt><a name="RegistrationForm-__init__"><strong>__init__</strong></a>(self, data<font color="#909090">=None</font>, files<font color="#909090">=None</font>, auto_id<font color="#909090">=u'id_%s'</font>, prefix<font color="#909090">=None</font>, initial<font color="#909090">=None</font>, error_class<font color="#909090">=&lt;class 'django.forms.utils.ErrorList'&gt;</font>, label_suffix<font color="#909090">=None</font>, empty_permitted<font color="#909090">=False</font>, field_order<font color="#909090">=None</font>, use_required_attribute<font color="#909090">=None</font>, renderer<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="RegistrationForm-__iter__"><strong>__iter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RegistrationForm-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><strong>__str__</strong> <em>lambda</em> self</dt></dl>
+
+<dl><dt><strong>__unicode__</strong> <em>lambda</em> self</dt></dl>
+
+<dl><dt><a name="RegistrationForm-add_error"><strong>add_error</strong></a>(self, field, error)</dt><dd><tt>Update&nbsp;the&nbsp;content&nbsp;of&nbsp;`self.<strong>_errors</strong>`.<br>
+&nbsp;<br>
+The&nbsp;`field`&nbsp;argument&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;field&nbsp;to&nbsp;which&nbsp;the&nbsp;errors<br>
+should&nbsp;be&nbsp;added.&nbsp;If&nbsp;its&nbsp;value&nbsp;is&nbsp;None&nbsp;the&nbsp;errors&nbsp;will&nbsp;be&nbsp;treated&nbsp;as<br>
+NON_FIELD_ERRORS.<br>
+&nbsp;<br>
+The&nbsp;`error`&nbsp;argument&nbsp;can&nbsp;be&nbsp;a&nbsp;single&nbsp;error,&nbsp;a&nbsp;list&nbsp;of&nbsp;errors,&nbsp;or&nbsp;a<br>
+dictionary&nbsp;that&nbsp;maps&nbsp;field&nbsp;names&nbsp;to&nbsp;lists&nbsp;of&nbsp;errors.&nbsp;What&nbsp;we&nbsp;define&nbsp;as<br>
+an&nbsp;"error"&nbsp;can&nbsp;be&nbsp;either&nbsp;a&nbsp;simple&nbsp;string&nbsp;or&nbsp;an&nbsp;instance&nbsp;of<br>
+ValidationError&nbsp;with&nbsp;its&nbsp;message&nbsp;attribute&nbsp;set&nbsp;and&nbsp;what&nbsp;we&nbsp;define&nbsp;as<br>
+list&nbsp;or&nbsp;dictionary&nbsp;can&nbsp;be&nbsp;an&nbsp;actual&nbsp;`list`&nbsp;or&nbsp;`dict`&nbsp;or&nbsp;an&nbsp;instance<br>
+of&nbsp;ValidationError&nbsp;with&nbsp;its&nbsp;`error_list`&nbsp;or&nbsp;`error_dict`&nbsp;attribute&nbsp;set.<br>
+&nbsp;<br>
+If&nbsp;`error`&nbsp;is&nbsp;a&nbsp;dictionary,&nbsp;the&nbsp;`field`&nbsp;argument&nbsp;*must*&nbsp;be&nbsp;None&nbsp;and<br>
+errors&nbsp;will&nbsp;be&nbsp;added&nbsp;to&nbsp;the&nbsp;fields&nbsp;that&nbsp;correspond&nbsp;to&nbsp;the&nbsp;keys&nbsp;of&nbsp;the<br>
+dictionary.</tt></dd></dl>
+
+<dl><dt><a name="RegistrationForm-add_initial_prefix"><strong>add_initial_prefix</strong></a>(self, field_name)</dt><dd><tt>Add&nbsp;a&nbsp;'initial'&nbsp;prefix&nbsp;for&nbsp;checking&nbsp;dynamic&nbsp;initial&nbsp;values</tt></dd></dl>
+
+<dl><dt><a name="RegistrationForm-add_prefix"><strong>add_prefix</strong></a>(self, field_name)</dt><dd><tt>Returns&nbsp;the&nbsp;field&nbsp;name&nbsp;with&nbsp;a&nbsp;prefix&nbsp;appended,&nbsp;if&nbsp;this&nbsp;<a href="django.forms.forms.html#Form">Form</a>&nbsp;has&nbsp;a<br>
+prefix&nbsp;set.<br>
+&nbsp;<br>
+Subclasses&nbsp;may&nbsp;wish&nbsp;to&nbsp;override.</tt></dd></dl>
+
+<dl><dt><a name="RegistrationForm-as_p"><strong>as_p</strong></a>(self)</dt><dd><tt>Returns&nbsp;this&nbsp;form&nbsp;rendered&nbsp;as&nbsp;HTML&nbsp;&lt;p&gt;s.</tt></dd></dl>
+
+<dl><dt><a name="RegistrationForm-as_table"><strong>as_table</strong></a>(self)</dt><dd><tt>Returns&nbsp;this&nbsp;form&nbsp;rendered&nbsp;as&nbsp;HTML&nbsp;&lt;tr&gt;s&nbsp;--&nbsp;excluding&nbsp;the&nbsp;&lt;table&gt;&lt;/table&gt;.</tt></dd></dl>
+
+<dl><dt><a name="RegistrationForm-as_ul"><strong>as_ul</strong></a>(self)</dt><dd><tt>Returns&nbsp;this&nbsp;form&nbsp;rendered&nbsp;as&nbsp;HTML&nbsp;&lt;li&gt;s&nbsp;--&nbsp;excluding&nbsp;the&nbsp;&lt;ul&gt;&lt;/ul&gt;.</tt></dd></dl>
+
+<strong>changed_data</strong> = &lt;django.utils.functional.cached_property object&gt;
+<dl><dt><a name="RegistrationForm-clean"><strong>clean</strong></a>(self)</dt><dd><tt>Hook&nbsp;for&nbsp;doing&nbsp;any&nbsp;extra&nbsp;form-wide&nbsp;cleaning&nbsp;after&nbsp;Field.<a href="#RegistrationForm-clean">clean</a>()&nbsp;has&nbsp;been<br>
+called&nbsp;on&nbsp;every&nbsp;field.&nbsp;Any&nbsp;ValidationError&nbsp;raised&nbsp;by&nbsp;this&nbsp;method&nbsp;will<br>
+not&nbsp;be&nbsp;associated&nbsp;with&nbsp;a&nbsp;particular&nbsp;field;&nbsp;it&nbsp;will&nbsp;have&nbsp;a&nbsp;special-case<br>
+association&nbsp;with&nbsp;the&nbsp;field&nbsp;named&nbsp;'__all__'.</tt></dd></dl>
+
+<dl><dt><a name="RegistrationForm-full_clean"><strong>full_clean</strong></a>(self)</dt><dd><tt>Cleans&nbsp;all&nbsp;of&nbsp;self.<strong>data</strong>&nbsp;and&nbsp;populates&nbsp;self.<strong>_errors</strong>&nbsp;and<br>
+self.<strong>cleaned_data</strong>.</tt></dd></dl>
+
+<dl><dt><a name="RegistrationForm-get_initial_for_field"><strong>get_initial_for_field</strong></a>(self, field, field_name)</dt><dd><tt>Return&nbsp;initial&nbsp;data&nbsp;for&nbsp;field&nbsp;on&nbsp;form.&nbsp;Use&nbsp;initial&nbsp;data&nbsp;from&nbsp;the&nbsp;form<br>
+or&nbsp;the&nbsp;field,&nbsp;in&nbsp;that&nbsp;order.&nbsp;Evaluate&nbsp;callable&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="RegistrationForm-has_changed"><strong>has_changed</strong></a>(self)</dt><dd><tt>Returns&nbsp;True&nbsp;if&nbsp;data&nbsp;differs&nbsp;from&nbsp;initial.</tt></dd></dl>
+
+<dl><dt><a name="RegistrationForm-has_error"><strong>has_error</strong></a>(self, field, code<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="RegistrationForm-hidden_fields"><strong>hidden_fields</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;the&nbsp;BoundField&nbsp;objects&nbsp;that&nbsp;are&nbsp;hidden&nbsp;fields.<br>
+Useful&nbsp;for&nbsp;manual&nbsp;form&nbsp;layout&nbsp;in&nbsp;templates.</tt></dd></dl>
+
+<dl><dt><a name="RegistrationForm-is_multipart"><strong>is_multipart</strong></a>(self)</dt><dd><tt>Returns&nbsp;True&nbsp;if&nbsp;the&nbsp;form&nbsp;needs&nbsp;to&nbsp;be&nbsp;multipart-encoded,&nbsp;i.e.&nbsp;it&nbsp;has<br>
+FileInput.&nbsp;Otherwise,&nbsp;False.</tt></dd></dl>
+
+<dl><dt><a name="RegistrationForm-is_valid"><strong>is_valid</strong></a>(self)</dt><dd><tt>Returns&nbsp;True&nbsp;if&nbsp;the&nbsp;form&nbsp;has&nbsp;no&nbsp;errors.&nbsp;Otherwise,&nbsp;False.&nbsp;If&nbsp;errors&nbsp;are<br>
+being&nbsp;ignored,&nbsp;returns&nbsp;False.</tt></dd></dl>
+
+<dl><dt><a name="RegistrationForm-non_field_errors"><strong>non_field_errors</strong></a>(self)</dt><dd><tt>Returns&nbsp;an&nbsp;ErrorList&nbsp;of&nbsp;errors&nbsp;that&nbsp;aren't&nbsp;associated&nbsp;with&nbsp;a&nbsp;particular<br>
+field&nbsp;--&nbsp;i.e.,&nbsp;from&nbsp;<a href="django.forms.forms.html#Form">Form</a>.<a href="#RegistrationForm-clean">clean</a>().&nbsp;Returns&nbsp;an&nbsp;empty&nbsp;ErrorList&nbsp;if&nbsp;there<br>
+are&nbsp;none.</tt></dd></dl>
+
+<dl><dt><a name="RegistrationForm-order_fields"><strong>order_fields</strong></a>(self, field_order)</dt><dd><tt>Rearranges&nbsp;the&nbsp;fields&nbsp;according&nbsp;to&nbsp;field_order.<br>
+&nbsp;<br>
+field_order&nbsp;is&nbsp;a&nbsp;list&nbsp;of&nbsp;field&nbsp;names&nbsp;specifying&nbsp;the&nbsp;order.&nbsp;Fields&nbsp;not<br>
+included&nbsp;in&nbsp;the&nbsp;list&nbsp;are&nbsp;appended&nbsp;in&nbsp;the&nbsp;default&nbsp;order&nbsp;for&nbsp;backward<br>
+compatibility&nbsp;with&nbsp;subclasses&nbsp;not&nbsp;overriding&nbsp;field_order.&nbsp;If&nbsp;field_order<br>
+is&nbsp;None,&nbsp;all&nbsp;fields&nbsp;are&nbsp;kept&nbsp;in&nbsp;the&nbsp;order&nbsp;defined&nbsp;in&nbsp;the&nbsp;class.<br>
+Unknown&nbsp;fields&nbsp;in&nbsp;field_order&nbsp;are&nbsp;ignored&nbsp;to&nbsp;allow&nbsp;disabling&nbsp;fields&nbsp;in<br>
+form&nbsp;subclasses&nbsp;without&nbsp;redefining&nbsp;ordering.</tt></dd></dl>
+
+<dl><dt><a name="RegistrationForm-visible_fields"><strong>visible_fields</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;BoundField&nbsp;objects&nbsp;that&nbsp;aren't&nbsp;hidden&nbsp;fields.<br>
+The&nbsp;opposite&nbsp;of&nbsp;the&nbsp;<a href="#RegistrationForm-hidden_fields">hidden_fields</a>()&nbsp;method.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="django.forms.forms.html#BaseForm">django.forms.forms.BaseForm</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>errors</strong></dt>
+<dd><tt>Returns&nbsp;an&nbsp;ErrorDict&nbsp;for&nbsp;the&nbsp;data&nbsp;provided&nbsp;for&nbsp;the&nbsp;form</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="django.forms.forms.html#BaseForm">django.forms.forms.BaseForm</a>:<br>
+<dl><dt><strong>default_renderer</strong> = None</dl>
+
+<dl><dt><strong>field_order</strong> = None</dl>
+
+<dl><dt><strong>prefix</strong> = None</dl>
+
+<dl><dt><strong>use_required_attribute</strong> = True</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>CHOICES</strong> = (('1', 'Seller'), ('2', 'Buyer'), ('3', 'Both'))</td></tr></table>
+</body></html>

@@ -1,0 +1,196 @@
+{% extends 'marketplace_base.html' %}
+
+{% block title %}I3 Marketplace | Transactions{% endblock %}
+
+{% block extra_css %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/datatables.min.css"/>
+{% endblock %}
+
+{% block page_content %}
+  <div class="container">
+    <h2>Transactions</h2>
+    {% if request.user.is_staff %}
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th style="width: 250px;">Product</th>
+              <th>Buyer</th>
+              <th>Seller</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th style="width: 220px;">Timestamp</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for transaction in transactions %}
+              <tr>
+                <td>{{ transaction.product }}</td>
+                <td>{{ transaction.buyer }}</td>
+                <td>{{ transaction.seller }}</td>
+                <td>{{ transaction.quantity }}</td>
+                <td>{{ transaction.price }}</td>
+                <td>{{ transaction.timestamp|date:'r' }}</td>
+              </tr>
+            {% empty %}
+              <tr>
+                <td colspan="6">No transactions.</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <h3>Metering</h3>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th style="width: 250px;">Product</th>
+              <th>Buyer</th>
+              <th style="width: 120px;">Quantity Left</th>
+              <th>Order</th>
+              <th style="width: 220px;">Last Received Date</th>
+              <th style="width: 220px;">Order Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for count in item_counts %}
+              <tr>
+                <td>{{ count.product }}</td>
+                <td>{{ count.buyer }}</td>
+                <td>{{ count.quantity }}</td>
+                <td>{{ count.order }}</td>
+                <td>{{ count.last_recv_timestamp|date:'r' }}</td>
+                <td>{{ count.order_timestamp|date:'r' }}</td>
+              </tr>
+            {% empty %}
+              <tr>
+                <td colspan="6">Nothing available to show.</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {% else %}
+      {%  if sales %}
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1">
+            <h3>Sales</h3>
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th style="width: 250px;">Product</th>
+                <th>Buyer</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th style="width: 220px;">Timestamp</th>
+              </tr>
+              </thead>
+              <tbody>
+              {% for sale in sales %}
+                <tr>
+                  <td>{{ sale.product }}</td>
+                  <td>{{ sale.buyer }}</td>
+                  <td>{{ sale.quantity }}</td>
+                  <td>{{ sale.price }}</td>
+                  <td>{{ sale.timestamp|date:'r' }}</td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="5">You haven't made any sales yet.</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      {% endif %}
+      {% if purchases %}
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1">
+            <h3>Purchases</h3>
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th style="width: 250px;">Product</th>
+                <th>Seller</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th style="width: 220px;">Timestamp</th>
+              </tr>
+              </thead>
+              <tbody>
+              {% for purchase in purchases %}
+                <tr>
+                  <td>{{ purchase.product }}</td>
+                  <td>{{ purchase.seller }}</td>
+                  <td>{{ purchase.quantity }}</td>
+                  <td>{{ purchase.price }}</td>
+                  <td>{{ purchase.timestamp|date:'r' }}</td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="5">No purchases made yet.</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      {% endif %}
+      {% if item_counts %}
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1">
+            <h3>Metering</h3>
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th style="width: 250px;">Product</th>
+                <th style="width: 120px;">Quantity Left</th>
+                <th>Order</th>
+                <th style="width: 220px;">Last Received Date</th>
+                <th style="width: 220px;">Order Date</th>
+              </tr>
+              </thead>
+              <tbody>
+              {% for count in item_counts %}
+                <tr>
+                  <td>{{ count.product }}</td>
+                  <td>{{ count.quantity }}</td>
+                  <td>{{ count.order }}</td>
+                  <td>{{ count.last_recv_timestamp|date:'r' }}</td>
+                  <td>{{ count.order_timestamp|date:'r' }}</td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="5">Nothing available to show.</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endblock %}
+
+{% block extra_js %}
+  {{ block.super }}
+  <script type="text/javascript"
+          src="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/datatables.min.js"></script>
+
+  <script  type="text/javascript">
+      $(document).ready(function () {
+          $('table.table').each(function() {
+              $(this).DataTable();
+          })
+      });
+  </script>
+{% endblock %}

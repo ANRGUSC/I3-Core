@@ -1,0 +1,74 @@
+{% extends 'marketplace_base.html' %}
+
+{% block title %}I3 Marketplace | Create Product{% endblock %}
+
+{% block page_content %}
+  <div class="container">
+    <form method="POST" action="" enctype='multipart/form-data'>
+      <h1>Create new Product</h1>
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="form-group">
+            <label for="{{ form.title.id_for_label }}">Topic</label>
+            {{ form.title }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="form-group">
+            <label for="{{ form.media.id_for_label }}">Media</label>
+            {{ form.media }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="form-group">
+            <label for="{{ form.sensor_type.id_for_label }}"><font color="#ff0000">Sensor Type</font></label>
+            {{ form.sensor_type }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+         <div class="form-group">
+            <label for="{{ form.restricted_active.id_for_label }}"><font color="#ff0000">Restricted</font></label>
+            {{ form.restricted_active }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="form-group">
+            <label for="{{ form.description.id_for_label }}">Description</label>
+            {{ form.description }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="form-group">
+            <label for="{{ form.price.id_for_label }}">Price</label>
+            {{ form.price }}
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="form-group">
+            <label for="{{ form.price.id_for_label }}">Sale Price</label>
+            <div class="input-group">
+              <span class="input-group-addon">{{ form.sale_active }}</span>
+              {{ form.sale_price }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <button type="submit" class="btn btn-primary pull-right">{% firstof submit_btn 'Create' %}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "marketplace_base.html" %}
+{% load staticfiles %}
+{% load get_thumbnail %}
+
+{% block title %}
+I3 Marketplace | Products
+{% endblock %}
+
+{% block page_content %}
+<div class="container">
+  <div class="card card-container">
+    <p class="text-danger">{{ error }}</p>
+    <form method="POST" action="" enctype='multipart/form-data'>
+      <h1>Invite</h1>
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-sm-8">
+          {{ form.errors }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Email</label>
+            {{ form.email }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <button type="submit" class="btn btn-primary pull-right">{% firstof submit_btn 'Invite' %}</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div><!-- /card-container -->
+</div>
+<br>
+{% endblock %}
+

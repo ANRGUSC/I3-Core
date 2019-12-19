@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block extra_css %}
+  <link rel='stylesheet' href='{% static "css/bootstrap-notifications.min.css" %}' />
+  <link rel='stylesheet' href='{% static "css/marketplace.css" %}'/>
+{% endblock %}
+
+
+{% block content %}
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img alt="I3 Marketplace" src="/media/logo/bee_logo_small.png"/>
+        </a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="{% url 'home' %}">I3 Marketplace</a>
+          </li>
+          <li>
+            <a href="{% url 'products:list' %}">Products</a>
+          </li>
+          <li>
+            <a href="{% url 'dashboard:transactions' %}">Transactions</a>
+          </li>
+          {% if request.user.is_staff %}
+          <li>
+            <a href="{% url 'dashboard:flows' %}">Flows</a>
+          </li>
+          <li>
+            <a href="{% url 'dashboard:users-list' %}">Users</a>
+          </li>
+          {% endif %}
+          <li>
+            <a href="https://anrgusc.github.io/iotm/I3_API_Documentation.pdf" target="_blank"}">Documentation</a>
+          </li>
+          <li>
+            <a href="http://ceng.usc.edu/~bkrishna/" target="_blank">Contact</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          {% include 'nav/requests.html' %}
+          {% include 'nav/notifications.html' %}
+          <li>
+            <a href="{% url 'cart:list' %}">
+              <i data-count="{{ request.user.get_cart.num_items }}" id="cart_count"
+                 class="glyphicon glyphicon-shopping-cart {% if request.user.get_cart.num_items > 0 %}notification-icon{% endif %}"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="glyphicon glyphicon-user"></span> Hello {{ request.user.username }} <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="{% url 'dashboard:index' %}">Dashboard</a></li>
+                {%if request.user.is_authenticated%}
+                <li><a href="{% url 'key:index' %}">API</a></li>
+                {% endif %}
+{#              <li><a href="{% url 'transactions' %}">Transactions</a></li>#}
+{#              <li><a href="{% url 'flows' %}">Flows</a></li>#}
+{#              <li><a href="{% url 'register' %}">Sign Up</a></li>#}
+              <li role="separator" class="divider"></li>
+              {% if request.user.is_staff %}
+                <li><a href="{% url 'admin:index' %}" target="_blank">Admin<i class="glyphicon glyphicon-new-window pull-right"></i></a></li>
+                <li><a href="{% url 'invite' %}">Invite</a></li>
+              {% endif %}
+              <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  <!-- Page Content -->
+  {% block page_content %}
+  {% endblock %}
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; I3 Marketplace, University of Southern California 2017.</p>
+          <p>Prototype of the I3 IoT marketplace, pre-release version 0.2, developed by the USC Viterbi Center for Cyber-Physical Systems and the Internet of Things, in collaboration with the USC Viterbi Integrated Media Systems Center and the USC Marshall Institute for Communication Technology Management. April 24, 2017. </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+{% endblock %}
+
+{% block extra_js %}
+  <script type="text/javascript" src="{% static "js/notifications.js" %}"></script>
+{%  endblock %}

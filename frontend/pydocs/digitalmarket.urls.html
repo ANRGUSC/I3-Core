@@ -1,0 +1,52 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module digitalmarket.urls</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="digitalmarket.html"><font color="#ffffff">digitalmarket</font></a>.urls</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/erika/Desktop/I3/iotm/frontend/src/digitalmarket/urls.py">/home/erika/Desktop/I3/iotm/frontend/src/digitalmarket/urls.py</a></font></td></tr></table>
+    <p><tt>digitalmarket&nbsp;URL&nbsp;Configuration<br>
+&nbsp;<br>
+The&nbsp;`urlpatterns`&nbsp;list&nbsp;routes&nbsp;URLs&nbsp;to&nbsp;views.&nbsp;For&nbsp;more&nbsp;information&nbsp;please&nbsp;see:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;https://docs.djangoproject.com/en/1.8/topics/http/urls/<br>
+Examples:<br>
+Function&nbsp;views<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;Add&nbsp;an&nbsp;import:&nbsp;&nbsp;from&nbsp;my_app&nbsp;import&nbsp;views<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;Add&nbsp;a&nbsp;URL&nbsp;to&nbsp;urlpatterns:&nbsp;&nbsp;url(r'^$',&nbsp;views.home,&nbsp;name='home')<br>
+Class-based&nbsp;views<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;Add&nbsp;an&nbsp;import:&nbsp;&nbsp;from&nbsp;other_app.views&nbsp;import&nbsp;Home<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;Add&nbsp;a&nbsp;URL&nbsp;to&nbsp;urlpatterns:&nbsp;&nbsp;url(r'^$',&nbsp;Home.as_view(),&nbsp;name='home')<br>
+Including&nbsp;another&nbsp;URLconf<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;Add&nbsp;an&nbsp;import:&nbsp;&nbsp;from&nbsp;blog&nbsp;import&nbsp;urls&nbsp;as&nbsp;blog_urls<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;Add&nbsp;a&nbsp;URL&nbsp;to&nbsp;urlpatterns:&nbsp;&nbsp;url(r'^blog/',&nbsp;include(blog_urls))</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="accounts.html">accounts</a><br>
+<a href="django.contrib.admin.html">django.contrib.admin</a><br>
+</td><td width="25%" valign=top><a href="django.html">django</a><br>
+<a href="django.forms.html">django.forms</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>CHOICES</strong> = (('1', 'Seller'), ('2', 'Buyer'), ('3', 'Both'))<br>
+<strong>TYPE_DICT</strong> = {u'1': u'Seller', u'2': u'Buyer', u'3': u'Both'}<br>
+<strong>__warningregistry__</strong> = {('Passing a 3-tuple to django.conf.urls.include() ...vide the namespace argument to include() instead.', &lt;class 'django.utils.deprecation.RemovedInDjango20Warning'&gt;, 38): True, ('Specifying a namespace in django.conf.urls.inclu...aining the list of patterns and app_name instead.', &lt;class 'django.utils.deprecation.RemovedInDjango20Warning'&gt;, 43): True, ('Specifying a namespace in django.conf.urls.inclu...aining the list of patterns and app_name instead.', &lt;class 'django.utils.deprecation.RemovedInDjango20Warning'&gt;, 48): True, ('Specifying a namespace in django.conf.urls.inclu...aining the list of patterns and app_name instead.', &lt;class 'django.utils.deprecation.RemovedInDjango20Warning'&gt;, 53): True}<br>
+<strong>settings</strong> = &lt;LazySettings "digitalmarket.settings"&gt;<br>
+<strong>unicode_literals</strong> = _Feature((2, 6, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 131072)<br>
+<strong>urlpatterns</strong> = [&lt;RegexURLPattern home ^$&gt;, &lt;RegexURLPattern login ^accounts/login/$&gt;, &lt;RegexURLPattern logout ^accounts/logout/$&gt;, &lt;RegexURLResolver &lt;module 'django.contrib.admind...rib/admindocs/urls.pyc'&gt; (None:None) ^admin/doc/&gt;, &lt;RegexURLResolver &lt;RegexURLPattern list&gt; (admin:admin) ^admin/&gt;, &lt;RegexURLResolver &lt;module 'cart.urls' from './cart/urls.pyc'&gt; (None:cart) ^cart/&gt;, &lt;RegexURLPattern checkout ^checkout/$&gt;, &lt;RegexURLPattern requests ^requests/ajax/(?P&lt;pk&gt;\d+)/(?P&lt;task&gt;approve|decline)/$&gt;, &lt;RegexURLResolver &lt;module 'products.urls' from './products/urls.pyc'&gt; (None:products) ^products/&gt;, &lt;RegexURLPattern dashboard ^dashboard/$&gt;, &lt;RegexURLPattern transactions ^dashboard/transactions/$&gt;, &lt;RegexURLPattern flows ^dashboard/flows/$&gt;, &lt;RegexURLPattern register ^dashboard/createuser/$&gt;, &lt;RegexURLResolver &lt;module 'notifications.urls' f.../urls.pyc'&gt; (None:notifications) ^notifications/&gt;, &lt;RegexURLPattern None ^static\/(?P&lt;path&gt;.*)$&gt;, &lt;RegexURLPattern None ^media\/(?P&lt;path&gt;.*)$&gt;]</td></tr></table>
+</body></html>

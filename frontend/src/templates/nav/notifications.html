@@ -1,0 +1,37 @@
+<li class="dropdown dropdown-notifications" id="dropdown-notifications">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              {% if request.user.notification_box and request.user.notification_box.num_unread > 0 %}
+                <i data-count="{{ request.user.notification_box.num_unread }}" class="glyphicon glyphicon-bell notification-icon"></i>
+              {% else %}
+                <i class="glyphicon glyphicon-bell"></i>
+              {% endif %}
+            </a>
+            <div class="dropdown-container">
+
+              <div class="dropdown-toolbar">
+                <div class="dropdown-toolbar-actions" style="margin-top: -2px;">
+                  <a href="#">Mark all as read</a>
+                </div>
+                <h3 class="dropdown-toolbar-title">Notifications</h3>
+              </div><!-- /dropdown-toolbar -->
+
+              <ul class="dropdown-menu">
+                {% for notification in request.user.notifications %}
+                  {% include 'notifications/notification_snippet.html' with notification=notification %}
+                {% empty %}
+                  <li class="notification">
+                    <div class="media">
+                      <div class="media-body">
+                        <strong class="notification-title">No notifications</strong>
+                      </div>
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+
+              <div class="dropdown-footer text-center">
+                <a href="{% url 'notifications:list' %}">View All</a>
+              </div><!-- /dropdown-footer -->
+
+            </div><!-- /dropdown-container -->
+          </li><!-- /dropdown -->

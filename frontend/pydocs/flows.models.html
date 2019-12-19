@@ -1,0 +1,187 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module flows.models</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="flows.html"><font color="#ffffff">flows</font></a>.models</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/erika/Desktop/I3/iotm/frontend/src/flows/models.py">/home/erika/Desktop/I3/iotm/frontend/src/flows/models.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="django.db.models.html">django.db.models</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="django.db.models.base.html#Model">django.db.models.base.Model</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="flows.models.html#Flow">Flow</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Flow">class <strong>Flow</strong></a>(<a href="django.db.models.base.html#Model">django.db.models.base.Model</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="django.db.models.base.html#Model">Model</a>&nbsp;that&nbsp;represents&nbsp;the&nbsp;flow&nbsp;of&nbsp;data&nbsp;for&nbsp;a&nbsp;topic<br>
+&nbsp;<br>
+<a href="#Flow">Flow</a>(id,&nbsp;user,&nbsp;topic,&nbsp;direction,&nbsp;state)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="flows.models.html#Flow">Flow</a></dd>
+<dd><a href="django.db.models.base.html#Model">django.db.models.base.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Flow-__unicode__"><strong>__unicode__</strong></a>(self)</dt></dl>
+
+<strong>direction</strong> = &lt;django.db.models.query_utils.DeferredAttribute object&gt;
+<strong>id</strong> = &lt;django.db.models.query_utils.DeferredAttribute object&gt;
+<strong>objects</strong> = &lt;django.db.models.manager.Manager object&gt;
+<strong>state</strong> = &lt;django.db.models.query_utils.DeferredAttribute object&gt;
+<strong>topic</strong> = &lt;django.db.models.query_utils.DeferredAttribute object&gt;
+<strong>user_id</strong> = &lt;django.db.models.query_utils.DeferredAttribute object&gt;
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>user</strong></dt>
+<dd><tt>Accessor&nbsp;to&nbsp;the&nbsp;related&nbsp;object&nbsp;on&nbsp;the&nbsp;forward&nbsp;side&nbsp;of&nbsp;a&nbsp;many-to-one&nbsp;or<br>
+one-to-one&nbsp;(via&nbsp;ForwardOneToOneDescriptor&nbsp;subclass)&nbsp;relation.<br>
+&nbsp;<br>
+In&nbsp;the&nbsp;example::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;Child(Model):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent&nbsp;=&nbsp;ForeignKey(Parent,&nbsp;related_name='children')<br>
+&nbsp;<br>
+``child.parent``&nbsp;is&nbsp;a&nbsp;``ForwardManyToOneDescriptor``&nbsp;instance.</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>DoesNotExist</strong> = &lt;class 'flows.models.DoesNotExist'&gt;</dl>
+
+<dl><dt><strong>MultipleObjectsReturned</strong> = &lt;class 'flows.models.MultipleObjectsReturned'&gt;</dl>
+
+<hr>
+Methods inherited from <a href="django.db.models.base.html#Model">django.db.models.base.Model</a>:<br>
+<dl><dt><a name="Flow-__eq__"><strong>__eq__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="Flow-__hash__"><strong>__hash__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Flow-__init__"><strong>__init__</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="Flow-__ne__"><strong>__ne__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="Flow-__reduce__"><strong>__reduce__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Flow-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Flow-__setstate__"><strong>__setstate__</strong></a>(self, state)</dt></dl>
+
+<dl><dt><a name="Flow-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Flow-clean"><strong>clean</strong></a>(self)</dt><dd><tt>Hook&nbsp;for&nbsp;doing&nbsp;any&nbsp;extra&nbsp;model-wide&nbsp;validation&nbsp;after&nbsp;<a href="#Flow-clean">clean</a>()&nbsp;has&nbsp;been<br>
+called&nbsp;on&nbsp;every&nbsp;field&nbsp;by&nbsp;self.<strong>clean_fields</strong>.&nbsp;Any&nbsp;ValidationError&nbsp;raised<br>
+by&nbsp;this&nbsp;method&nbsp;will&nbsp;not&nbsp;be&nbsp;associated&nbsp;with&nbsp;a&nbsp;particular&nbsp;field;&nbsp;it&nbsp;will<br>
+have&nbsp;a&nbsp;special-case&nbsp;association&nbsp;with&nbsp;the&nbsp;field&nbsp;defined&nbsp;by&nbsp;NON_FIELD_ERRORS.</tt></dd></dl>
+
+<dl><dt><a name="Flow-clean_fields"><strong>clean_fields</strong></a>(self, exclude<font color="#909090">=None</font>)</dt><dd><tt>Cleans&nbsp;all&nbsp;fields&nbsp;and&nbsp;raises&nbsp;a&nbsp;ValidationError&nbsp;containing&nbsp;a&nbsp;dict<br>
+of&nbsp;all&nbsp;validation&nbsp;errors&nbsp;if&nbsp;any&nbsp;occur.</tt></dd></dl>
+
+<dl><dt><a name="Flow-date_error_message"><strong>date_error_message</strong></a>(self, lookup_type, field_name, unique_for)</dt></dl>
+
+<dl><dt><a name="Flow-delete"><strong>delete</strong></a>(self, using<font color="#909090">=None</font>, keep_parents<font color="#909090">=False</font>)</dt></dl>
+
+<dl><dt><a name="Flow-full_clean"><strong>full_clean</strong></a>(self, exclude<font color="#909090">=None</font>, validate_unique<font color="#909090">=True</font>)</dt><dd><tt>Calls&nbsp;clean_fields,&nbsp;clean,&nbsp;and&nbsp;validate_unique,&nbsp;on&nbsp;the&nbsp;model,<br>
+and&nbsp;raises&nbsp;a&nbsp;``ValidationError``&nbsp;for&nbsp;any&nbsp;errors&nbsp;that&nbsp;occurred.</tt></dd></dl>
+
+<dl><dt><a name="Flow-get_deferred_fields"><strong>get_deferred_fields</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;set&nbsp;containing&nbsp;names&nbsp;of&nbsp;deferred&nbsp;fields&nbsp;for&nbsp;this&nbsp;instance.</tt></dd></dl>
+
+<dl><dt><a name="Flow-prepare_database_save"><strong>prepare_database_save</strong></a>(self, field)</dt></dl>
+
+<dl><dt><a name="Flow-refresh_from_db"><strong>refresh_from_db</strong></a>(self, using<font color="#909090">=None</font>, fields<font color="#909090">=None</font>)</dt><dd><tt>Reloads&nbsp;field&nbsp;values&nbsp;from&nbsp;the&nbsp;database.<br>
+&nbsp;<br>
+By&nbsp;default,&nbsp;the&nbsp;reloading&nbsp;happens&nbsp;from&nbsp;the&nbsp;database&nbsp;this&nbsp;instance&nbsp;was<br>
+loaded&nbsp;from,&nbsp;or&nbsp;by&nbsp;the&nbsp;read&nbsp;router&nbsp;if&nbsp;this&nbsp;instance&nbsp;wasn't&nbsp;loaded&nbsp;from<br>
+any&nbsp;database.&nbsp;The&nbsp;using&nbsp;parameter&nbsp;will&nbsp;override&nbsp;the&nbsp;default.<br>
+&nbsp;<br>
+Fields&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;specify&nbsp;which&nbsp;fields&nbsp;to&nbsp;reload.&nbsp;The&nbsp;fields<br>
+should&nbsp;be&nbsp;an&nbsp;iterable&nbsp;of&nbsp;field&nbsp;attnames.&nbsp;If&nbsp;fields&nbsp;is&nbsp;None,&nbsp;then<br>
+all&nbsp;non-deferred&nbsp;fields&nbsp;are&nbsp;reloaded.<br>
+&nbsp;<br>
+When&nbsp;accessing&nbsp;deferred&nbsp;fields&nbsp;of&nbsp;an&nbsp;instance,&nbsp;the&nbsp;deferred&nbsp;loading<br>
+of&nbsp;the&nbsp;field&nbsp;will&nbsp;call&nbsp;this&nbsp;method.</tt></dd></dl>
+
+<dl><dt><a name="Flow-save"><strong>save</strong></a>(self, force_insert<font color="#909090">=False</font>, force_update<font color="#909090">=False</font>, using<font color="#909090">=None</font>, update_fields<font color="#909090">=None</font>)</dt><dd><tt>Saves&nbsp;the&nbsp;current&nbsp;instance.&nbsp;Override&nbsp;this&nbsp;in&nbsp;a&nbsp;subclass&nbsp;if&nbsp;you&nbsp;want&nbsp;to<br>
+control&nbsp;the&nbsp;saving&nbsp;process.<br>
+&nbsp;<br>
+The&nbsp;'force_insert'&nbsp;and&nbsp;'force_update'&nbsp;parameters&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;insist<br>
+that&nbsp;the&nbsp;"save"&nbsp;must&nbsp;be&nbsp;an&nbsp;SQL&nbsp;insert&nbsp;or&nbsp;update&nbsp;(or&nbsp;equivalent&nbsp;for<br>
+non-SQL&nbsp;backends),&nbsp;respectively.&nbsp;Normally,&nbsp;they&nbsp;should&nbsp;not&nbsp;be&nbsp;set.</tt></dd></dl>
+
+<dl><dt><a name="Flow-save_base"><strong>save_base</strong></a>(self, raw<font color="#909090">=False</font>, force_insert<font color="#909090">=False</font>, force_update<font color="#909090">=False</font>, using<font color="#909090">=None</font>, update_fields<font color="#909090">=None</font>)</dt><dd><tt>Handles&nbsp;the&nbsp;parts&nbsp;of&nbsp;saving&nbsp;which&nbsp;should&nbsp;be&nbsp;done&nbsp;only&nbsp;once&nbsp;per&nbsp;save,<br>
+yet&nbsp;need&nbsp;to&nbsp;be&nbsp;done&nbsp;in&nbsp;raw&nbsp;saves,&nbsp;too.&nbsp;This&nbsp;includes&nbsp;some&nbsp;sanity<br>
+checks&nbsp;and&nbsp;signal&nbsp;sending.<br>
+&nbsp;<br>
+The&nbsp;'raw'&nbsp;argument&nbsp;is&nbsp;telling&nbsp;save_base&nbsp;not&nbsp;to&nbsp;save&nbsp;any&nbsp;parent<br>
+models&nbsp;and&nbsp;not&nbsp;to&nbsp;do&nbsp;any&nbsp;changes&nbsp;to&nbsp;the&nbsp;values&nbsp;before&nbsp;save.&nbsp;This<br>
+is&nbsp;used&nbsp;by&nbsp;fixture&nbsp;loading.</tt></dd></dl>
+
+<dl><dt><a name="Flow-serializable_value"><strong>serializable_value</strong></a>(self, field_name)</dt><dd><tt>Returns&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;field&nbsp;name&nbsp;for&nbsp;this&nbsp;instance.&nbsp;If&nbsp;the&nbsp;field&nbsp;is<br>
+a&nbsp;foreign&nbsp;key,&nbsp;returns&nbsp;the&nbsp;id&nbsp;value,&nbsp;instead&nbsp;of&nbsp;the&nbsp;object.&nbsp;If&nbsp;there's<br>
+no&nbsp;Field&nbsp;object&nbsp;with&nbsp;this&nbsp;name&nbsp;on&nbsp;the&nbsp;model,&nbsp;the&nbsp;model&nbsp;attribute's<br>
+value&nbsp;is&nbsp;returned&nbsp;directly.<br>
+&nbsp;<br>
+Used&nbsp;to&nbsp;serialize&nbsp;a&nbsp;field's&nbsp;value&nbsp;(in&nbsp;the&nbsp;serializer,&nbsp;or&nbsp;form&nbsp;output,<br>
+for&nbsp;example).&nbsp;Normally,&nbsp;you&nbsp;would&nbsp;just&nbsp;access&nbsp;the&nbsp;attribute&nbsp;directly<br>
+and&nbsp;not&nbsp;use&nbsp;this&nbsp;method.</tt></dd></dl>
+
+<dl><dt><a name="Flow-unique_error_message"><strong>unique_error_message</strong></a>(self, model_class, unique_check)</dt></dl>
+
+<dl><dt><a name="Flow-validate_unique"><strong>validate_unique</strong></a>(self, exclude<font color="#909090">=None</font>)</dt><dd><tt>Checks&nbsp;unique&nbsp;constraints&nbsp;on&nbsp;the&nbsp;model&nbsp;and&nbsp;raises&nbsp;``ValidationError``<br>
+if&nbsp;any&nbsp;failed.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="django.db.models.base.html#Model">django.db.models.base.Model</a>:<br>
+<dl><dt><a name="Flow-check"><strong>check</strong></a>(cls, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="django.db.models.base.html#ModelBase">django.db.models.base.ModelBase</a></font></font></dt></dl>
+
+<dl><dt><a name="Flow-from_db"><strong>from_db</strong></a>(cls, db, field_names, values)<font color="#909090"><font face="helvetica, arial"> from <a href="django.db.models.base.html#ModelBase">django.db.models.base.ModelBase</a></font></font></dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="django.db.models.base.html#Model">django.db.models.base.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>pk</strong></dt>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__warningregistry__</strong> = {(u'on_delete will be a required arg for ForeignKey ...els/fields/#django.db.models.ForeignKey.on_delete', &lt;class 'django.utils.deprecation.RemovedInDjango20Warning'&gt;, 13): True}<br>
+<strong>settings</strong> = &lt;LazySettings "digitalmarket.settings"&gt;<br>
+<strong>unicode_literals</strong> = _Feature((2, 6, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 131072)</td></tr></table>
+</body></html>
