@@ -19,7 +19,7 @@ then
 	echo "../frontend/src/templates/products/product_map.html"
 	exit -1
 else
-	echo "Using admin set Goolge Maps API key"
+	echo "Using admin set Google Maps API key"
 fi
 
 echo "Finding your IP..."
