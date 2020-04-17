@@ -6,7 +6,7 @@ For more information on I3, please visit https://i3.usc.edu/.
 
 The I3 marketplace is implemented with a web-based marketplace frontend connected to a publish-subscribe broker backend. The website allows sellers to post streaming data products, buyers to purchase them, and then the broker allows the corresponding data river to flow from the authorized seller to the buyer. The demonstration of the platform is available in the YouTube at the following link:
 
-* (I3-v1 Video Demonstration)[https://youtu.be/qFee7mlhriE]
+* [I3-v1 Video Demonstration](https://youtu.be/qFee7mlhriE)
 
 ![I3_Platform](docs/I3_Platform.jpg)
 
