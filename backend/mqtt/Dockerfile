@@ -39,13 +39,19 @@ RUN \
         && make WITH_SRV=no WITH_MEMORY_TRACKING=no \
         && make install && ldconfig \
         && mkdir /var/log/mosquitto/ \
-        && wget https://www.python.org/ftp/python/2.7.15/Python-2.7.15.tgz \
-        && tar xzf Python-2.7.15.tgz \
-        && rm -rf Python-2.7.15.tgz \
-        && cd Python-2.7.15 \
-        && ./configure --enable-optimizations \
-        && make altinstall \
+#        && wget https://www.python.org/ftp/python/2.7.15/Python-2.7.15.tgz \
+#        && tar xzf Python-2.7.15.tgz \
+#        && rm -rf Python-2.7.15.tgz \
+#        && cd Python-2.7.15 \
+#        && ./configure --enable-optimizations \
+#        && make altinstall \
+        && apt-get install -y software-properties-common \
+        && add-apt-repository ppa:deadsnakes/ppa -y \
+        && apt-get update \
+        && apt-get install -y python2.7 \
         && apt-get install -y python-pip \
+        && wget https://bootstrap.pypa.io/2.7/get-pip.py \
+        && python get-pip.py \
         && pip install pyjwt \
         && pip install cryptography \
         && cd .. \

@@ -33,17 +33,17 @@ def verify_jwt_1(signature, public_key):
 	try:
 		decoded_signature = jwt.decode(signature, public_key, algorithm = 'RS256')
 	except jwt.exceptions.InvalidSignatureError:
-		print 'jwt.exceptions.InvalidSignatureError'
+		print('jwt.exceptions.InvalidSignatureError')
 		return 0
 	except jwt.exceptions.ExpiredSignatureError:
-		print 'Signature has expired'
+		print('Signature has expired')
 		return 0
 	except ValueError:
-		print 'ERROR!'
+		print('ERROR!')
 		return 0
 	
-	print 'decode successful, matched!'
-	print decoded_signature
+	print('decode successful, matched!')
+	print(decoded_signature)
 	return 1
 
 # It's best if we store just a string for public key in MySQL
