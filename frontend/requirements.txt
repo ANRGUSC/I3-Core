@@ -47,7 +47,7 @@ subprocess32>=3.2.7
 tabulate==0.7.5
 termcolor==1.1.0
 uritemplate==3.0.0
-urllib3==1.22
+urllib3==1.24.2
 virtualenv==16.0.0
 wcwidth==0.1.7
 websocket-client==0.48.0
